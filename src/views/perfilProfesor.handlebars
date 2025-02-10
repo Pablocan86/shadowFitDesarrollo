@@ -1,0 +1,82 @@
+<header><h1>PERFIL PROFESOR</h1></header>
+<main>
+  <div class="profesorCuadro">
+    <div class="datos1">
+
+      {{#if profesor.foto_perfil}}
+        <img
+          class="imagenPerfil"
+          src="/api/users/ver-foto-perfil-profesor/{{profesor._id}}"
+          alt=""
+        />
+      {{else}}
+        <form
+          action="/api/users/cargar-foto-perfil-profesor/{{profesor._id}}"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <label class="inputFoto" for="fotoPerfil">Elegir foto</label>
+          <input
+            class="archivo"
+            style="display:none;"
+            type="file"
+            name="fotoPerfil"
+            placeholder="Elegir foto"
+            id="fotoPerfil"
+          />
+          <button class="cargarFoto" type="submit">Guardar</button>
+        </form>
+      {{/if}}
+      <div>
+        <p>Nombre: {{profesor.nombre}}</p>
+        <p>Apellido: {{profesor.apellido}}</p>
+        <p>Correo: {{profesor.email}}</p>
+      </div>
+    </div>
+  </div>
+  <section class="alumnos">
+    <h2>ALUMNOS</h2>
+    {{#if alumnos}}
+      <ul class="listaAlumnos">
+
+        {{#each alumnos}}
+          <li class="alumno"><p>{{this.nombre}}
+              {{this.apellido}}</p>
+            <a
+              class="contenedorImagen"
+              href="/api/users/panelAlumno/{{this._id}}"
+            ><img
+                class="infoAlumno"
+                src="https://www.svgrepo.com/show/423418/info.svg"
+                alt=""
+              /><div class="info-cuadro" id="infoCuadro">
+                Panel Alumno
+              </div></a>
+            <a
+              class="contenedorImagen"
+              href="/api/views/confeccionrutinas/{{this._id}}"
+            ><img
+                class="crearRutina"
+                src="https://www.svgrepo.com/show/526523/document-add.svg"
+                alt=""
+              /><div class="info-rutina" id="crea_Rutina">
+                Crear rutina
+              </div></a>
+          </li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <p>Aun no tiene alumnos</p>
+
+    {{/if}}
+  </section>
+  <a class="volver" href="/api/views/paginaprincipal">Ir a página principal</a>
+
+  <form action="/api/session/logout" method="post"><button
+      class="logout"
+      type="submit"
+    >Cerrar cesión</button></form>
+
+</main>
+<footer>Todos los derechos reservados &copy; Cantarin Pablo</footer>
+<script src="/js/perfilProfesor.js"></script>

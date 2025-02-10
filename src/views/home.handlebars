@@ -1,0 +1,46 @@
+<header>
+  
+    <img src="https://i.ibb.co/4WsHDQX/Artboard-1-copy-8.png" alt="logo" />
+  {{#if session}}
+     {{#if alumno}}
+          <p>¡Hola
+            {{alumno.nombre}}
+            {{alumno.apellido}}!</p>
+      {{/if}}    
+      {{#if profesor}}
+          <p>¡Hola
+            {{profesor.nombre}}
+            {{profesor.apellido}}!</p>     
+      {{/if}}
+      {{else}}
+      {{/if}}
+  <nav>
+    
+    <ul>
+      <li>Home</li>
+      <li>Novedades</li>
+      <li>Rutinas</li>
+      {{#if session}}
+        {{#if alumno}}
+          <li>
+            <a href="/api/users/perfil/{{alumno.id}}">Perfil</a></li>
+        {{/if}}
+        {{#if profesor}}
+          <li><a
+              href="/api/users/perfil/profesor/{{profesor.id}}"
+            >Perfil</a></li>
+
+        {{/if}}
+      {{else}}
+        
+          <li><a href="./login">Alumnos</a></li>
+          <li><a href="./loginprofesores">Profesores</a></li>
+        </div>
+      {{/if}}
+    </ul>
+  </nav>
+</header>
+<main>
+
+</main>
+<footer></footer>

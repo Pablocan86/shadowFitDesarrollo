@@ -1,0 +1,165 @@
+<header>
+  <h1>ARMADO DE RUTINAS</h1>
+</header>
+<main>
+  <div>
+    <h2 id="nombreAlumno" data-id="{{alumno._id}}"></h2>
+    <h2 id="nombreProfesor" data-id="{{profesor._id}}">PROFESOR:
+      {{profesor.nombre}}
+      {{profesor.apellido}}
+    </h2>
+  </div>
+  <section class="section_ingreso_datos">
+    <div class="datos_personales">
+      <label for="fecha">
+        <img
+          class="img_datos"
+          src="https://www.svgrepo.com/show/286607/calendar.svg"
+          alt=""
+        /><input type="date" name="fecha" id="fecha" /></label>
+
+      <label for="nombre"><img
+          class="img_datos"
+          src="https://www.svgrepo.com/show/474473/personal-id.svg"
+          alt=""
+        />
+        <p id="nombre" style="text-transform:uppercase;">{{alumno.nombre}}</p>
+        {{!-- <input
+          type="text"
+          name="nombre"
+          id="nombre"
+          placeholder="{{alumno.nombre}}"
+        /> --}}
+      </label>
+
+      <label for="apellido"><img
+          class="img_datos"
+          src="https://www.svgrepo.com/show/474473/personal-id.svg"
+          alt=""
+        />
+        <p
+          id="apellido"
+          style="text-transform:uppercase;"
+        >{{alumno.apellido}}</p>
+        {{!-- <input
+          type="text"
+          id="apellido"
+          placeholder="{{alumno.apellido}}"
+          name="apellido"
+        /> --}}
+      </label>
+      {{! LOGRAR TRAER IMAGEN DE LA FOTO DE PERFIL }}
+      {{! <label for="input-imagen"><img
+          class="img_datos"
+          src="https://www.svgrepo.com/show/258843/link.svg"
+          alt=""
+        />
+        <input
+          type="text"
+          id="input-imagen"
+          placeholder="Link de imagen..."
+        /></label> }}
+
+      <button id="carga_uno"></button>
+    </div>
+    <div class="dias_grupo">
+      <label for="dia">Día de entrenamiento N°
+        <input type="number" id="dia" /></label>
+
+      <label for="grupo"><img
+          class="img_datos"
+          src="https://www.svgrepo.com/show/401812/flexed-biceps-medium-light-skin-tone.svg"
+          alt=""
+        />
+        <input
+          type="text"
+          id="grupo"
+          placeholder="Músculo o zona a trabajar"
+        /></label>
+
+      <button id="dia_grupo">
+        <img src="https://www.svgrepo.com/show/256722/folder-add.svg" alt="" />
+      </button>
+    </div>
+    <div class="subtitulos">
+      <label for="subtitulo"><img
+          class="img_datos"
+          src="https://www.svgrepo.com/show/251969/division.svg"
+          alt=""
+        />
+        <input
+          type="text"
+          id="circuito"
+          placeholder="Circuito o comienzo de otro músculo"
+        /></label>
+
+      <button id="agrega_subtitulo">
+        <img src="https://www.svgrepo.com/show/256722/folder-add.svg" alt="" />
+      </button>
+    </div>
+    <div class="eje_obs">
+      <div class="ejercicios_series">
+        <label for="ejercicios"><img
+            class="img_datos"
+            src="https://www.svgrepo.com/show/284188/exercise-gym.svg"
+            alt=""
+          />
+          <input
+            type="text"
+            id="ejercicios"
+            placeholder="Busca el ejercicio..."
+          /></label>
+
+        <div id="resultados"></div>
+        <label for="seriesyrepeticiones"><img
+            class="img_datos"
+            src="https://www.svgrepo.com/show/289686/checklist.svg"
+            alt=""
+          />
+          <input
+            type="text"
+            id="series_repeticiones"
+            placeholder="Series y repeticiones"
+          />
+        </label>
+      </div>
+      <div class="obs_agregar">
+        <label for="observaciones"><img
+            class="img_datos"
+            src="https://www.svgrepo.com/show/474865/high-priority.svg"
+            alt=""
+          />
+          <textarea
+            name=""
+            id="observaciones"
+            cols="30"
+            rows=""
+            placeholder="Agrega algún detalle"
+          ></textarea>
+        </label>
+
+        <button id="agregar_ejercicio">
+          <img
+            src="https://www.svgrepo.com/show/256722/folder-add.svg"
+            alt=""
+          />
+        </button>
+      </div>
+    </div>
+  </section>
+  <section id="muestra_rutina">
+    <div id="ingreso_fecha"></div>
+    <article id="ingreso_rutina"></article>
+  </section>
+  <div class="guardado">
+    <button class="btns_guardado" id="generarDocumento">Crear Rutina</button><button
+      class="btns_guardado"
+      id="guardarRutina"
+    >Guardar</button>
+
+    <button class="btns_guardado" id="borrarRutina">Borrar</button>
+  </div>
+</main>
+<footer><a href="/api/users/perfil/profesor/{{profesor._id}}">Volver al perfil</a></footer>
+
+<script src="/js/confeccionRutinas.js"></script>

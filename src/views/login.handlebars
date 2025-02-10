@@ -1,0 +1,20 @@
+<header><h1>LOGIN ALUMNOS</h1></header>
+<main>
+  <form action="/api/session/login" method="POST">
+    <label for="email">Escribe tu correo:
+    </label>
+    <input type="email" name="email" id="email" />
+    <label for="password">Escribe tu contraseña:
+    </label>
+    <input type="password" name="password" id="password" />
+    <button type="submit">Entrar</button>
+    <a href="/api/views/registro">Registrarme</a>
+    {{#if error}}
+      <p>{{error}}</p>
+    {{else}}
+      <p></p>
+    {{/if}}
+  </form>
+  <a class="volver" href="/api/views/paginaprincipal">Ir a página principal</a>
+</main>
+<footer>Copy @ Cantarin Pablo</footer>

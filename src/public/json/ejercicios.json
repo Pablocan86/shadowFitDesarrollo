@@ -1,0 +1,1373 @@
+[
+  {
+    "id": 0,
+    "nombre": "",
+    "musculo": "PECTORALES",
+    "video": "",
+    "imagen": ""
+  },
+  {
+    "id": 1,
+    "nombre": "APERTURA INCLINADA",
+    "musculo": "PECTORALES",
+    "video": "https://www.instagram.com/p/CeeJaQWDC1P/",
+    "imagen": "pectorales.png"
+  },
+  {
+    "id": 2,
+    "nombre": "APERTURA PLANA EN MAQUINA - PECK DECK",
+    "musculo": "PECTORALES",
+    "video": "https://www.instagram.com/p/CfCi_u5jfMp/",
+    "imagen": "pectorales.png"
+  },
+  {
+    "id": 3,
+    "nombre": "APERTURA PLANA CON MANCUERNAS",
+    "musculo": "PECTORALES",
+    "video": "https://www.instagram.com/p/CeeJI9gjoOT/",
+    "imagen": "pectorales.png"
+  },
+
+  {
+    "id": 4,
+    "nombre": "CRUCES EN POLEA",
+    "musculo": "PECTORALES",
+    "video": "https://www.instagram.com/p/CeeI_VHjLfb/",
+    "imagen": "pectorales.png"
+  },
+
+  {
+    "id": 5,
+    "nombre": "DECLINADO CON MANCUERNAS",
+    "musculo": "PECTORALES",
+    "video": "https://www.instagram.com/p/CeeIyaSDOjA/",
+    "imagen": "pectorales.png"
+  },
+  {
+    "id": 6,
+    "nombre": "PRESS INCLINADO CON BARRA",
+    "musculo": "PECTORALES",
+    "video": "https://www.instagram.com/p/CeeIoSZDgM2/",
+    "imagen": "pectorales.png"
+  },
+  {
+    "id": 7,
+    "nombre": "PRESS INCLINADO CON MANCUERNAS",
+    "musculo": "PECTORALES",
+    "video": "https://www.instagram.com/p/CeeIfRoDwqH/",
+    "imagen": "pectorales.png"
+  },
+  {
+    "id": 8,
+    "nombre": "PRESS PLANO CON BARRA",
+    "musculo": "PECTORALES",
+    "video": "https://www.instagram.com/p/CeeIDoQj7QI/",
+    "imagen": "pectorales.png"
+  },
+  {
+    "id": 9,
+    "nombre": "PRESS PLANO CON MANCUERNAS",
+    "musculo": "PECTORALES",
+    "video": "https://www.instagram.com/p/CeeIPgADJAq/",
+    "imagen": "pectorales.png"
+  },
+  {
+    "id": 10,
+    "nombre": "FLEXIONES DE BRAZO",
+    "musculo": "PECTORALES",
+    "video": "https://www.instagram.com/p/CfCjm3qDOXW/",
+    "imagen": "pectorales.png"
+  },
+  {
+    "id": 0,
+    "nombre": "",
+    "musculo": "DORSALES",
+    "video": "",
+    "imagen": ""
+  },
+
+  {
+    "id": 11,
+    "nombre": "DOMINADAS COLGADO",
+    "musculo": "DORSALES",
+    "video": "https://www.instagram.com/p/CeeJkUYjpOj/",
+    "imagen": "espalda.png"
+  },
+  {
+    "id": 12,
+    "nombre": "JALON AL FRENTE",
+    "musculo": "DORSALES",
+    "video": "https://www.instagram.com/p/CeeJwcZD00Y/",
+    "imagen": "espalda.png"
+  },
+  {
+    "id": 13,
+    "nombre": "PULL OVER CON SOGA",
+    "musculo": "DORSALES",
+    "video": "https://www.instagram.com/p/CeeKiCNDQ84/",
+    "imagen": "espalda.png"
+  },
+  {
+    "id": 14,
+    "nombre": "REMO A UNA MANO",
+    "musculo": "DORSALES",
+    "video": "https://www.instagram.com/p/CfCj7lhj8CL/",
+    "imagen": "espalda.png"
+  },
+  {
+    "id": 15,
+    "nombre": "REMO BAJO EN MAQUINA",
+    "musculo": "DORSALES",
+    "video": "https://www.instagram.com/p/CeeKDtljYSr/",
+    "imagen": "espalda.png"
+  },
+  {
+    "id": 16,
+    "nombre": "REMO BARRA PRONADO",
+    "musculo": "DORSALES",
+    "video": "https://www.instagram.com/p/CfCkdtSDBAE/",
+    "imagen": "espalda.png"
+  },
+  {
+    "id": 17,
+    "nombre": "REMO CON BARRA SUPINADO",
+    "musculo": "DORSALES",
+    "video": "https://www.instagram.com/p/CeeKNVyjBdu/",
+    "imagen": "espalda.png"
+  },
+  {
+    "id": 18,
+    "nombre": "REMO SERRUCHO",
+    "musculo": "DORSALES",
+    "video": "https://www.instagram.com/p/CeeJ6pOj8Cj/",
+    "imagen": "espalda.png"
+  },
+  {
+    "id": 19,
+    "nombre": "TIRON INVERTIDO UNA MANO",
+    "musculo": "DORSALES",
+    "video": "https://www.instagram.com/p/CfCkvzAjJW0/",
+    "imagen": "espalda.png"
+  },
+  {
+    "id": 20,
+    "nombre": "TIRON INVERTIDO",
+    "musculo": "DORSALES",
+    "video": "https://www.instagram.com/p/CeeKWNmjRCM/",
+    "imagen": "espalda.png"
+  },
+  {
+    "id": 0,
+    "nombre": "O",
+    "musculo": "DELTOIDES",
+    "video": "",
+    "imagen": ""
+  },
+  {
+    "id": 21,
+    "nombre": "FRONTALES CON DISCO",
+    "musculo": "DELTOIDES",
+    "video": "https://www.instagram.com/p/CfClCtfD-uA/",
+    "imagen": "hombros.png"
+  },
+  {
+    "id": 22,
+    "nombre": "FRONTALES CON MANCUERNAS",
+    "musculo": "DELTOIDES",
+    "video": "https://www.instagram.com/p/CeeLjHVDVBc/",
+    "imagen": "hombros.png"
+  },
+  {
+    "id": 23,
+    "nombre": "FRONTALES AGARRE MARTILLO",
+    "musculo": "DELTOIDES",
+    "video": "https://www.instagram.com/p/CfClKOxDHVn/",
+    "imagen": "hombros.png"
+  },
+
+  {
+    "id": 24,
+    "nombre": "FRONTALES CON POLEA",
+    "musculo": "DELTOIDES",
+    "video": "https://www.instagram.com/p/CfClS8NDPFN/",
+    "imagen": "hombros.png"
+  },
+  {
+    "id": 25,
+    "nombre": "VUELOS LATERALES",
+    "musculo": "DELTOIDES",
+    "video": "https://www.instagram.com/p/CeeLSJ6DYoU/",
+    "imagen": "hombros.png"
+  },
+  {
+    "id": 26,
+    "nombre": "LATERALES 45° A UNA MANO",
+    "musculo": "DELTOIDES",
+    "video": "https://www.instagram.com/p/CeeLah-D3ek/",
+    "imagen": "hombros.png"
+  },
+  {
+    "id": 27,
+    "nombre": "LATERALES A UNA MANO",
+    "musculo": "DELTOIDES",
+    "video": "https://www.instagram.com/p/CfClavsjd7i/",
+    "imagen": "hombros.png"
+  },
+  {
+    "id": 28,
+    "nombre": "LATERALES EN POLEA",
+    "musculo": "DELTOIDES",
+    "video": "https://www.instagram.com/p/CfClkigjO2T/",
+    "imagen": "hombros.png"
+  },
+  {
+    "id": 29,
+    "nombre": "POTERIORES CON MANCUERNAS",
+    "musculo": "DELTOIDES",
+    "video": "https://www.instagram.com/p/CeeMFZZjYMX/",
+    "imagen": "hombros.png"
+  },
+  {
+    "id": 30,
+    "nombre": "POSTERIORES EN BANCO A 45°",
+    "musculo": "DELTOIDES",
+    "video": "https://www.instagram.com/p/CeeL8CvDaGQ/",
+    "imagen": "hombros.png"
+  },
+  {
+    "id": 31,
+    "nombre": "POSTERIORES EN MAQUINA",
+    "musculo": "DELTOIDES",
+    "video": "https://www.instagram.com/p/CeeLrIeDBJO/",
+    "imagen": "hombros.png"
+  },
+  {
+    "id": 32,
+    "nombre": "POSTERIORES EN POLEA",
+    "musculo": "DELTOIDES",
+    "video": "https://www.instagram.com/p/CeeLyj1jEw7/",
+    "imagen": "hombros.png"
+  },
+  {
+    "id": 33,
+    "nombre": "PRESS MILITAR CON BARRA",
+    "musculo": "DELTOIDES",
+    "video": "https://www.instagram.com/p/CeeLBKxD9in/",
+    "imagen": "hombros.png"
+  },
+  {
+    "id": 34,
+    "nombre": "PRESS MILITAR CON MANCUERNAS",
+    "musculo": "DELTOIDES",
+    "video": "https://www.instagram.com/p/CeeLJHpjrvy/",
+    "imagen": "hombros.png"
+  },
+  {
+    "id": 35,
+    "nombre": "PRESS TRAS NUCA",
+    "musculo": "DELTOIDES",
+    "video": "https://www.instagram.com/p/CfCl0NoDlxv/",
+    "imagen": "hombros.png"
+  },
+  {
+    "id": 36,
+    "nombre": "REMO AL MENTON (HOMBROS)",
+    "musculo": "DELTOIDES",
+    "video": "https://www.instagram.com/p/CeeMO7Ej6M5/",
+    "imagen": "hombros.png"
+  },
+  {
+    "id": 361,
+    "nombre": "PRESS MILITAR EN MAQUINA",
+    "musculo": "DELTOIDES",
+    "video": "https://www.instagram.com/p/CfCk30UDh6s/",
+    "imagen": "hombros.png"
+  },
+
+  {
+    "id": 37,
+    "nombre": "REMO AL MENTON CON POLEA (HOMBROS)",
+    "musculo": "DELTOIDES",
+    "video": "https://www.instagram.com/p/CfClsi5DCBp/",
+    "imagen": "hombros.png"
+  },
+  {
+    "id": 0,
+    "nombre": "",
+    "musculo": "TRAPECIO",
+    "video": "",
+    "imagen": ""
+  },
+  {
+    "id": 38,
+    "nombre": "ENCOGIMIENTOS BARRA",
+    "musculo": "TRAPECIO",
+    "video": "https://www.instagram.com/p/CeeMiqwDYbJ/",
+    "imagen": "trapecio.png"
+  },
+  {
+    "id": 39,
+    "nombre": "ENCOGIMIENTOS MANCUERNAS",
+    "musculo": "TRAPECIO",
+    "video": "https://www.instagram.com/p/CeeMqOvDGpm/",
+    "imagen": "trapecio.png"
+  },
+  {
+    "id": 40,
+    "nombre": "REMO MENTON",
+    "musculo": "TRAPECIO",
+    "video": "https://www.instagram.com/p/CeeMyjBDMwM/",
+    "imagen": "trapecio.png"
+  },
+  {
+    "id": 0,
+    "nombre": "",
+    "musculo": "BICEPS",
+    "video": "",
+    "imagen": ""
+  },
+  {
+    "id": 41,
+    "nombre": "BICEPS 21",
+    "musculo": "BICEPS",
+    "video": "https://www.instagram.com/p/CeeOQZ3jGu0/",
+    "imagen": "biceps.png"
+  },
+  {
+    "id": 42,
+    "nombre": "BICEPS BARRA RECTA",
+    "musculo": "BICEPS",
+    "video": "https://www.instagram.com/p/CeeM-3Pj71I/",
+    "imagen": "biceps.png"
+  },
+  {
+    "id": 43,
+    "nombre": "BICEPS BARRA W",
+    "musculo": "BICEPS",
+    "video": "https://www.instagram.com/p/CfCl8ayDbNX/",
+    "imagen": "biceps.png"
+  },
+  {
+    "id": 44,
+    "nombre": "BICEPS CONCENTRADO",
+    "musculo": "BICEPS",
+    "video": "https://www.instagram.com/p/CeeN2eCjb3D/",
+    "imagen": "biceps.png"
+  },
+  {
+    "id": 45,
+    "nombre": "BICEPS CONCENTRADO POLEA",
+    "musculo": "BICEPS",
+    "video": "https://www.instagram.com/p/CeeNtMFDmnd/",
+    "imagen": "biceps.png"
+  },
+  {
+    "id": 46,
+    "nombre": "BICEPS CON MANCUERNAS ALTERNADO",
+    "musculo": "BICEPS",
+    "video": "https://www.instagram.com/p/CeeNaZ6jXcl/",
+    "imagen": "biceps.png"
+  },
+  {
+    "id": 47,
+    "nombre": "BICEPS MARTILLO MANCUERNAS",
+    "musculo": "BICEPS",
+    "video": "https://www.instagram.com/p/CeeN_Blj-HL/",
+    "imagen": "biceps.png"
+  },
+  {
+    "id": 48,
+    "nombre": "BICEPS MARTILLO POLEA",
+    "musculo": "BICEPS",
+    "video": "https://www.instagram.com/p/CfCmE8uDAv-/",
+    "imagen": "biceps.png"
+  },
+  {
+    "id": 49,
+    "nombre": "BICEPS POLEA SUPERIOR",
+    "musculo": "BICEPS",
+    "video": "https://www.instagram.com/p/CeeOH1HjDyg/",
+    "imagen": "biceps.png"
+  },
+  {
+    "id": 50,
+    "nombre": "BICEPS POLEA SUPERIOR UNA MANO",
+    "musculo": "BICEPS",
+    "video": "https://www.instagram.com/p/CfCmNIZDhv_/",
+    "imagen": "biceps.png"
+  },
+  {
+    "id": 51,
+    "nombre": "BICEPS SCOTT",
+    "musculo": "BICEPS",
+    "video": "https://www.instagram.com/p/CeeNiyPDRuU/",
+    "imagen": "biceps.png"
+  },
+  {
+    "id": 0,
+    "nombre": "",
+    "musculo": "TRICEPS",
+    "video": "",
+    "imagen": ""
+  },
+  {
+    "id": 52,
+    "nombre": "TRICEPS EXTENSIONES POLEA",
+    "musculo": "TRICEPS",
+    "video": "https://www.instagram.com/p/CeeOtsCjhtS/",
+    "imagen": "triceps.png"
+  },
+  {
+    "id": 53,
+    "nombre": "FONDOS ENTRE BANCOS",
+    "musculo": "TRICEPS",
+    "video": "https://www.instagram.com/p/CeeO2hsDlvD/",
+    "imagen": "triceps.png"
+  },
+  {
+    "id": 54,
+    "nombre": "FONDOS PARALELAS",
+    "musculo": "TRICEPS",
+    "video": "https://www.instagram.com/p/CeeO_rkjJfY/",
+    "imagen": "triceps.png"
+  },
+  {
+    "id": 55,
+    "nombre": "FRANCES CON BARRA",
+    "musculo": "TRICEPS",
+    "video": "https://www.instagram.com/p/CeePQ49jGWQ/",
+    "imagen": "triceps.png"
+  },
+  {
+    "id": 56,
+    "nombre": "FRANCES CON MANCUERNA ACOSTADO",
+    "musculo": "TRICEPS",
+    "video": "https://www.instagram.com/p/CeePZbND4Wy/",
+    "imagen": "triceps.png"
+  },
+  {
+    "id": 57,
+    "nombre": "FRANCES CON MANCUERNA SENTADO",
+    "musculo": "TRICEPS",
+    "video": "https://www.instagram.com/p/CeePiqQDle7/",
+    "imagen": "triceps.png"
+  },
+  {
+    "id": 58,
+    "nombre": "FRANCES EN POLEA",
+    "musculo": "TRICEPS",
+    "video": "https://www.instagram.com/p/CeePraYDkFz/",
+    "imagen": "triceps.png"
+  },
+  {
+    "id": 59,
+    "nombre": "FRANCES POLEA UNA MANO",
+    "musculo": "TRICEPS",
+    "video": "https://www.instagram.com/p/CfCmVYnDfMo/",
+    "imagen": "triceps.png"
+  },
+  {
+    "id": 60,
+    "nombre": "TRICEP PATADA BURRO CON MANCUERNA",
+    "musculo": "TRICEPS",
+    "video": "https://www.instagram.com/p/CeeP0TijH9W/",
+    "imagen": "triceps.png"
+  },
+  {
+    "id": 61,
+    "nombre": "TRICEPS PATADA BURRO EN POLEA",
+    "musculo": "TRICEPS",
+    "video": "https://www.instagram.com/p/CfCmdZCDsr_/",
+    "imagen": "triceps.png"
+  },
+  {
+    "id": 62,
+    "nombre": "PRESS PLANO AGARRE ESTRECHO",
+    "musculo": "TRICEPS",
+    "video": "https://www.instagram.com/p/CeeP76dDVms/",
+    "imagen": "triceps.png"
+  },
+  {
+    "id": 0,
+    "nombre": "",
+    "musculo": "ADUCTORES",
+    "video": "",
+    "imagen": ""
+  },
+  {
+    "id": 63,
+    "nombre": "ADUCTORES EN MAQUINA",
+    "musculo": "ADUCTORES",
+    "video": "https://www.instagram.com/p/CeeSS5UjACE/",
+    "imagen": "aductores.png"
+  },
+  {
+    "id": 64,
+    "nombre": "ADUCTORES EN POLEA",
+    "musculo": "ADUCTORES",
+    "video": "https://www.instagram.com/p/CeeSaQhjhAw/",
+    "imagen": "aductores.png"
+  },
+  {
+    "id": 0,
+    "nombre": "",
+    "musculo": "CUADRICEPS",
+    "video": "",
+    "imagen": ""
+  },
+  {
+    "id": 65,
+    "nombre": "ESTOCADAS BARRA",
+    "musculo": "CUADRICEPS",
+    "video": "https://www.instagram.com/p/CeeQETBDETq/",
+    "imagen": "cuadriceps.png"
+  },
+  {
+    "id": 66,
+    "nombre": "ESTOCADAS BULGARAS",
+    "musculo": "CUADRICEPS",
+    "video": "https://www.instagram.com/p/CeeRPmPjMge/",
+    "imagen": "cuadriceps.png"
+  },
+  {
+    "id": 67,
+    "nombre": "ESTOCADAS CAMINANDO",
+    "musculo": "CUADRICEPS",
+    "video": "https://www.instagram.com/p/CeeQMtPDAra/",
+    "imagen": "cuadriceps.png"
+  },
+  {
+    "id": 68,
+    "nombre": "EXTENSIONES DE CUADRICEPS",
+    "musculo": "CUADRICEPS",
+    "video": "https://www.instagram.com/p/CeeQUa7jWtI/",
+    "imagen": "cuadriceps.png"
+  },
+  {
+    "id": 69,
+    "nombre": "PRENSA 45°",
+    "musculo": "CUADRICEPS",
+    "video": "https://www.instagram.com/p/CfCmtaNDb09/",
+    "imagen": "cuadriceps.png"
+  },
+  {
+    "id": 70,
+    "nombre": "PRENSA HORIZONTAL",
+    "musculo": "CUADRICEPS",
+    "video": "https://www.instagram.com/p/CeeQcxIDWuC/",
+    "imagen": "cuadriceps.png"
+  },
+  {
+    "id": 71,
+    "nombre": "SENTADILLA LIBRE",
+    "musculo": "CUADRICEPS",
+    "video": "https://www.instagram.com/p/CeeQlbdjSYD/",
+    "imagen": "cuadriceps.png"
+  },
+  {
+    "id": 72,
+    "nombre": "SENTADILLA MULTIPOWER",
+    "musculo": "CUADRICEPS",
+    "video": "https://www.instagram.com/p/CeeQ_WLjgwB/",
+    "imagen": "cuadriceps.png"
+  },
+  {
+    "id": 73,
+    "nombre": "SENTADILLA SISSY",
+    "musculo": "CUADRICEPS",
+    "video": "https://www.instagram.com/p/CeeRgwEj0mQ/",
+    "imagen": "cuadriceps.png"
+  },
+  {
+    "id": 74,
+    "nombre": "SUBIDAS AL BANCO",
+    "musculo": "CUADRICEPS",
+    "video": "https://www.instagram.com/p/CeeRYn3j1cT/",
+    "imagen": "cuadriceps.png"
+  },
+  {
+    "id": 75,
+    "nombre": "SENTADILLA ZUMO",
+    "musculo": "CUADRICEPS",
+    "video": "https://www.instagram.com/p/CeeRHb6jfIX/",
+    "imagen": "cuadriceps.png"
+  },
+  {
+    "id": 125,
+    "nombre": "SENTADILLA GOBLET",
+    "musculo": "CUADRICEPS",
+    "video": "https://www.instagram.com/p/CfCn5aBDcXZ/",
+    "imagen": "cuadriceps.png"
+  },
+  {
+    "id": 0,
+    "nombre": "",
+    "musculo": "FEMORALES",
+    "video": "",
+    "imagen": ""
+  },
+  {
+    "id": 76,
+    "nombre": "CAMILLA FEMORALES",
+    "musculo": "FEMORALES",
+    "video": "https://www.instagram.com/p/CfCmlXhDD1x/",
+    "imagen": "femorales.png"
+  },
+  {
+    "id": 77,
+    "nombre": "ELEVACIONES PELVICAS PARA FEMORALES",
+    "musculo": "FEMORALES",
+    "video": "https://www.instagram.com/p/CeeSCIsDsOD/",
+    "imagen": "femorales.png"
+  },
+  {
+    "id": 78,
+    "nombre": "INCLINACIONES",
+    "musculo": "FEMORALES",
+    "video": "https://www.instagram.com/p/CeeSJ7MDKhh/",
+    "imagen": "femorales.png"
+  },
+  {
+    "id": 79,
+    "nombre": "PARADO A UNA PIERNA",
+    "musculo": "FEMORALES",
+    "video": "https://www.instagram.com/p/CeeR5K4j1hc/",
+    "imagen": "femorales.png"
+  },
+  {
+    "id": 80,
+    "nombre": "PESO MUERTO",
+    "musculo": "FEMORALES",
+    "video": "https://www.instagram.com/p/CeeRpaejGfE/",
+    "imagen": "femorales.png"
+  },
+  {
+    "id": 81,
+    "nombre": "PESO MUERTO A UNA PIERNA",
+    "musculo": "FEMORALES",
+    "video": "https://www.instagram.com/p/CfCm0w4DydT/",
+    "imagen": "femorales.png"
+  },
+  {
+    "id": 82,
+    "nombre": "SILLON FEMORALES",
+    "musculo": "FEMORALES",
+    "video": "https://www.instagram.com/p/CeeRxayjEV4/",
+    "imagen": "femorales.png"
+  },
+  {
+    "id": 0,
+    "nombre": "",
+    "musculo": "ABDOMINALES",
+    "video": "",
+    "imagen": ""
+  },
+  {
+    "id": 83,
+    "nombre": "ABDOMINALES EN BANCO REGULABLE",
+    "musculo": "ABDOMINALES",
+    "video": "https://www.instagram.com/p/CfCm9LEDjUq/",
+    "imagen": "abdominales.png"
+  },
+  {
+    "id": 84,
+    "nombre": "ABDOMINALES CRUNCH",
+    "musculo": "ABDOMINALES",
+    "video": "https://www.instagram.com/p/CeeTyTcjGYn/",
+    "imagen": "abdominales.png"
+  },
+  {
+    "id": 85,
+    "nombre": "ABDOMINALES INFERIORES EN BANCO",
+    "musculo": "ABDOMINALES",
+    "video": "https://www.instagram.com/p/CeeUZTzDw0N/",
+    "imagen": "abdominales.png"
+  },
+  {
+    "id": 86,
+    "nombre": "ABDOMINALES INFERIORES PARALELAS",
+    "musculo": "ABDOMINALES",
+    "video": "https://www.instagram.com/p/CeeUhf5jAaC/",
+    "imagen": "abdominales.png"
+  },
+  {
+    "id": 87,
+    "nombre": "OBLICUOS MANCUERNA",
+    "musculo": "ABDOMINALES",
+    "video": "https://www.instagram.com/p/CfCnEt-jGp-/",
+    "imagen": "abdominales.png"
+  },
+  {
+    "id": 88,
+    "nombre": "OBLICUOS POLEA",
+    "musculo": "ABDOMINALES",
+    "video": "https://www.instagram.com/p/CeeUQI3jfhS/",
+    "imagen": "abdominales.png"
+  },
+  {
+    "id": 89,
+    "nombre": "OBLICUOS EN EL SUELO",
+    "musculo": "ABDOMINALES",
+    "video": "https://www.instagram.com/p/CfCnLzFD6hl/",
+    "imagen": "abdominales.png"
+  },
+  {
+    "id": 90,
+    "nombre": "ABDOMINALES SUPERIORES POLEA",
+    "musculo": "ABDOMINALES",
+    "video": "https://www.instagram.com/p/CeeT9s2Dr5T/",
+    "imagen": "abdominales.png"
+  },
+  {
+    "id": 0,
+    "nombre": "",
+    "musculo": "LUMBARES",
+    "video": "",
+    "imagen": ""
+  },
+  {
+    "id": 91,
+    "nombre": "EXTENSIONES EN BANCO",
+    "musculo": "LUMBARES",
+    "video": "https://www.instagram.com/p/CeeUpSSjDHg/",
+    "imagen": "lumbares.png"
+  },
+  {
+    "id": 92,
+    "nombre": "EXTENSIONES EN SUELO",
+    "musculo": "LUMBARES",
+    "video": "https://www.instagram.com/p/CeeUxUVjMx0/",
+    "imagen": "lumbares.png"
+  },
+  {
+    "id": 93,
+    "nombre": "ABDOMINALES PLANCHA",
+    "musculo": "ABDOMINALES",
+    "video": "https://www.instagram.com/p/CfCnS5xDjR2/",
+    "imagen": "abdominales.png"
+  },
+  {
+    "id": 0,
+    "nombre": "",
+    "musculo": "GEMELOS",
+    "video": "",
+    "imagen": ""
+  },
+  {
+    "id": 94,
+    "nombre": "GEMELOS EN MAQUINA",
+    "musculo": "GEMELOS",
+    "video": "https://www.instagram.com/p/CfCoA8ejw4q/",
+    "imagen": "gemelos.png"
+  },
+  {
+    "id": 95,
+    "nombre": "GEMELOS EN ESCALON",
+    "musculo": "GEMELOS",
+    "video": "https://www.instagram.com/p/CeeVBxnD2oe/",
+    "imagen": "gemelos.png"
+  },
+  {
+    "id": 96,
+    "nombre": "GEMELOS EN PRENSA",
+    "musculo": "GEMELOS",
+    "video": "https://www.instagram.com/p/CeeVJTfDSO8/",
+    "imagen": "gemelos.png"
+  },
+  {
+    "id": 97,
+    "nombre": "SOLEO SENTADO",
+    "musculo": "GEMELOS",
+    "video": "https://www.instagram.com/p/CeeU5vLD8ee/",
+    "imagen": "gemelos.png"
+  },
+  {
+    "id": 0,
+    "nombre": "",
+    "musculo": "GLUTEOS",
+    "video": "",
+    "imagen": ""
+  },
+  {
+    "id": 98,
+    "nombre": "ABDUCTORES EN MAQUINA",
+    "musculo": "GLUTEOS",
+    "video": "https://www.instagram.com/p/CeeSiaKDDY1/",
+    "imagen": "gluteos.png"
+  },
+  {
+    "id": 99,
+    "nombre": "ABDUCTORES EN POLEA",
+    "musculo": "GLUTEOS",
+    "video": "https://www.instagram.com/p/CeeSrJyj_1s/",
+    "imagen": "gluteos.png"
+  },
+  {
+    "id": 100,
+    "nombre": "ELEVACIONES PELVICAS GLUTEOS",
+    "musculo": "GLUTEOS",
+    "video": "https://www.instagram.com/p/CeeSzeBjmxp/",
+    "imagen": "gluteos.png"
+  },
+  {
+    "id": 101,
+    "nombre": "PATADA DE GLUTEOS EN POLEA",
+    "musculo": "GLUTEOS",
+    "video": "https://www.instagram.com/p/CeeS7MaDJkI/",
+    "imagen": "gluteos.png"
+  },
+  {
+    "id": 102,
+    "nombre": "PATADA DE GLUTEOS CON TOBILLERA",
+    "musculo": "GLUTEOS",
+    "video": "https://www.instagram.com/p/CeeTNAuj2qh/",
+    "imagen": "gluteos.png"
+  },
+  {
+    "id": 103,
+    "nombre": "PATADA DE GLUTEOS EN POLEA CON BANCO",
+    "musculo": "GLUTEOS",
+    "video": "https://www.instagram.com/p/CeeTe-RjNRx/",
+    "imagen": "gluteos.png"
+  },
+  {
+    "id": 104,
+    "nombre": "PATADA DE GLUTEOS POLEA ALTA",
+    "musculo": "GLUTEOS",
+    "video": "https://www.instagram.com/p/CeeTECZjfOO/",
+    "imagen": "gluteos.png"
+  },
+  {
+    "id": 105,
+    "nombre": "CUERDA ALTERNADA",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/Ceej53pDbGe/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 106,
+    "nombre": "CUERDA CON SALTO",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/CeekPhrj2JB/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 107,
+    "nombre": "CUERDA CRUZADA",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/CeekZ5bjrw1/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 108,
+    "nombre": "ESTOCADAS CON SALTO",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/CegIS67DnxY/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 109,
+    "nombre": "JUMPING JACKS",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/CeekxDcjIRV/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 110,
+    "nombre": "MEDICINE LANZAMIENTO LATERAL",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/CeelfaljWNi/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 110,
+    "nombre": "MEDICINE LANZAMIENTO PECHO",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/CeelMLajOc8/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 111,
+    "nombre": "MEDICINE LANZAMIENTO SUELO",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/Ceek9t7DhY5/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 112,
+    "nombre": "MEDICINE SOBRE HOMBRO",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/CeelrCvDA6A/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 113,
+    "nombre": "MOUNTAIN CLIMBER",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/Ceel3mBDQUQ/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 114,
+    "nombre": "SALTOS SOBRE CAJON",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/CeemBzVDdxd/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 115,
+    "nombre": "SALTOS SOBRE STEP",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/CeemNH2jBvh/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 116,
+    "nombre": "SENTADILLAS CON SALTO",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/CeemXQSjFWG/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 117,
+    "nombre": "SPRINT EN EL LUGAR",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/CeemhbrD9P0/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 118,
+    "nombre": "SUBIDAS AL STEP",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/Ceemy4kDGKD/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 119,
+    "nombre": "TALONES A LOS GLUTEOS",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/Ceem9JbjrhL/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 120,
+    "nombre": "TOQUES AL STEP",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/CeenIQ3j1pg/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 121,
+    "nombre": "TROTE LATERAL SOBRE STEP",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/CeenWGojGDI/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 122,
+    "nombre": "ZANCADA CON APOYO ALTO",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/CeeniOjDgOS/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 123,
+    "nombre": "PLANCHA TOQUES ADELANTE",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/CfCnaIEDIO1/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 124,
+    "nombre": "SUPERMAN ACOSTADO",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/CfCniOOD_3M/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 126,
+    "nombre": "SWING KETTLEBELL",
+    "musculo": "AEROBICO",
+    "video": "https://www.instagram.com/p/CfCnxJqjKz6/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 127,
+    "nombre": "ESTIRAMIENTO ABDOMINALES",
+    "musculo": "ESTIRAMIENTO",
+    "video": "https://www.instagram.com/p/CfCoJdpDuok/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 128,
+    "nombre": "ESTIRAMIENTO BICEPS",
+    "musculo": "ESTIRAMIENTO",
+    "video": "https://www.instagram.com/p/CeetZzgDLCI/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 129,
+    "nombre": "ESTIRAMIENTO CUADRICEPS",
+    "musculo": "ESTIRAMIENTO",
+    "video": "https://www.instagram.com/p/CeetVouj0Si/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 130,
+    "nombre": "ESTIRAMIENTO DELTOIDES",
+    "musculo": "ESTIRAMIENTO",
+    "video": "https://www.instagram.com/p/CeetTgajwyl/",
+    "imagen": "sudor.svg"
+  },
+
+  {
+    "id": 131,
+    "nombre": "ESTIRAMIENTO DORSALES",
+    "musculo": "ESTIRAMIENTO",
+    "video": "https://www.instagram.com/p/CeetJbDjqQV/",
+    "imagen": "sudor.svg"
+  },
+
+  {
+    "id": 132,
+    "nombre": "ESTIRAMIENTO GEMELOS",
+    "musculo": "ESTIRAMIENTO",
+    "video": "https://www.instagram.com/p/CeetGWljU5Z/",
+    "imagen": "sudor.svg"
+  },
+
+  {
+    "id": 133,
+    "nombre": "ESTIRAMIENTO GLUTEOS",
+    "musculo": "ESTIRAMIENTO",
+    "video": "https://www.instagram.com/p/CeetD-7DzgH/",
+    "imagen": "sudor.svg"
+  },
+
+  {
+    "id": 134,
+    "nombre": "ESTIRAMIENTO ISQUIOTIBIALES",
+    "musculo": "ESTIRAMIENTO",
+    "video": "https://www.instagram.com/p/CeetBa3D8nB/",
+    "imagen": "sudor.svg"
+  },
+
+  {
+    "id": 135,
+    "nombre": "ESTIRAMIENTO LUMBARES",
+    "musculo": "ESTIRAMIENTO",
+    "video": "https://www.instagram.com/p/CfCoQZ_D_Ue/",
+    "imagen": "sudor.svg"
+  },
+
+  {
+    "id": 136,
+    "nombre": "ESTIRAMIENTO TRICEPS",
+    "musculo": "ESTIRAMIENTO",
+    "video": "https://www.instagram.com/p/Cees6mEjUgQ/",
+    "imagen": "sudor.svg"
+  },
+
+  {
+    "id": 137,
+    "nombre": "ESTIRAMIENTO ADUCTORES",
+    "musculo": "ESTIRAMIENTO",
+    "video": "https://www.instagram.com/p/CeetXrOjvKE/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 138,
+    "nombre": "ESTIRAMIENTO PECTORALES",
+    "musculo": "ESTIRAMIENTO",
+    "video": "https://www.instagram.com/p/Cees_erjzri/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 139,
+    "nombre": "ESTIRAMIENTO GENERAL",
+    "musculo": "ESTIRAMIENTO",
+    "video": "https://www.instagram.com/p/CfANv7jDMtH/",
+    "imagen": "sudor.svg"
+  },
+
+  {
+    "id": 140,
+    "nombre": "ENTRADA EN CALOR EN CASA",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ4d_vgv2h/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 141,
+    "nombre": "SENTADILLA BANDA EN MUSLOS",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ4sblg7xt/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 142,
+    "nombre": "PESO MUERTO (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ4ytIg974/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 143,
+    "nombre": "PESO MUERTO A UNA PIERNA (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ41W_A-62/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 144,
+    "nombre": "PESO MUERTO PIE ELEVADO (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ5AvWAsdi/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 145,
+    "nombre": "CAMINATA LATERAL TOBILLO (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ5D87gVl7/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 146,
+    "nombre": "CAMINATA LATERAL MUSLOS (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ5HV7AKpc/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 147,
+    "nombre": "ESTOCADA LATERAL TOBILLO (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ5KH0AXD2/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 148,
+    "nombre": "PATADA DE GLUTEOS MUSLO (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ75DHAv44/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 149,
+    "nombre": "ISQUIO DE PIE TOBILLO (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ8Jbygr5z/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 150,
+    "nombre": "LEG KICK DE PIE (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ8LrSAU80/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 151,
+    "nombre": "ESTOCADA BULGARA (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ8NowgU_l/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 152,
+    "nombre": "SENTADILLA ESTATICA ABDUCCION (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "hhttps://www.instagram.com/p/CgJ9EwwAaaP/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 153,
+    "nombre": "LEG KICK ACOSTADO (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ9HWsAJzb/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 154,
+    "nombre": "FROG PUMP BANDA EN MUSLOS (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ9KK0AC9B/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 155,
+    "nombre": "HIP THRUST BANDA CADERA (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ9TjpATYf/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 156,
+    "nombre": "ISQUIO UNA PIERNA ACOSTADO (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ9V8-gMSO/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 157,
+    "nombre": "ABDUCTORES PIES JUNTOS MUSLO (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ9ZasAc__/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 158,
+    "nombre": "HIP THRUST UNA PIERNA (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ9Xumg7Am/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 159,
+    "nombre": "HIP THRUST APOYO TALONES (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ9frvgdCm/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 160,
+    "nombre": "PATADA DE GLUTEOS RODILLA (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ9k5hACP4/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 161,
+    "nombre": "PATADA DE GLUTEOS PIES (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ9sZ-A7mH/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 162,
+    "nombre": "ABDUCCIONES TOBILLO ACOSTADO (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ9t1lAp0P/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 163,
+    "nombre": "ABDUCCIONES SENTADO RODILLA (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgJ9vY0A113/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 164,
+    "nombre": "PULL OVER (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgUGFlwAOzP/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 165,
+    "nombre": "HOMBROS POSTERIORES (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgUGDh8ASci/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 166,
+    "nombre": "JALON AL FRENTE (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgUGHeqAmuc/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 167,
+    "nombre": "REMO BAJO (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgUGJTaAD6v/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 168,
+    "nombre": "PRESS INCLINADO UNA MANO (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgUGKu_A8ns/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 170,
+    "nombre": "PRESS PLANO UNA MANO (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgUGRO3goPx/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 171,
+    "nombre": "VUELOS FRONTALES (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgUGVr9AZVj/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 172,
+    "nombre": "VUELOS POSTERIORES UNA MANO (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgUGUWtgPu4/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 173,
+    "nombre": "REMO SERRUCHO (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgUGSy_gBK_/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 174,
+    "nombre": "VUELOS LATERALES (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgUGkvBAJUW/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 175,
+    "nombre": "TRICEPS PATADA BURRO (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgUGmHDgRlt/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 176,
+    "nombre": "FRANCES TRICEPS (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgUGnoag2rs/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 177,
+    "nombre": "EXTENSIONES TRICEPS (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgUGpOfgu_o/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 178,
+    "nombre": "BICEPS MARTILLO (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgUGq_4gvnN/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 179,
+    "nombre": "BICEPS CONCENTRADO (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgUGsRDA-PW/",
+    "imagen": "sudor.svg"
+  },
+  {
+    "id": 180,
+    "nombre": "CURL DE BICEPS (ELASTICAS)",
+    "musculo": "ELASTICAS",
+    "video": "https://www.instagram.com/p/CgUGtiwAoXB/",
+    "imagen": "sudor.svg"
+  }
+]

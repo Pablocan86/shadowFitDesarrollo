@@ -1,0 +1,24 @@
+<header><h1>REGISTRO PROFESORES</h1></header>
+<main>
+  {{#if message}}
+    <h3 class="exitoso">{{message}}</h3>
+    <a class="loguear" href="/api/views/loginprofesores">Loguearme</a>
+  {{else}}
+    <form action="../../api/session/registroprofesores" method="POST">
+      <h4>REGISTRO</h4>
+      <label for="nombre">Nombre:</label>
+      <input type="text" name="nombre" id="nombre" />
+      <label for="apellido">Apellido:</label>
+      <input type="text" name="apellido" id="apellido" />
+      <label for="email">Correo electrónico:</label>
+      <input type="email" name="email" id="email" />
+      <label for="password">Contraseña:</label>
+      <input type="password" name="password" id="password" />
+      <label for="nacimiento">Fecha nacimiento:</label>
+      <input type="date" name="cumpleanos" id="nacimiento" />
+      <button type="submit">Registrarme</button>
+    </form>
+  {{/if}}
+  <a class="volver" href="/api/views/paginaprincipal">Ir a página principal</a>
+</main>
+<footer>Copyrigth Cantarin Pablo</footer>

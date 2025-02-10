@@ -1,0 +1,49 @@
+<header><h1>PANEL ALUMNO</h1></header>
+<main>
+
+  {{!En este sector se visualizan datos del alumno}}
+<div class="alumnoCuadro">
+    <div class="datos1">
+      {{#if alumno.foto_perfil}}
+      <img
+        class="fotoPerfil"
+        src="/api/users/ver-foto-perfil-alumno/{{alumno._id}}"
+        alt=""
+      />
+      {{else}}
+      <img
+        class="fotoPerfil"
+        src="https://www.svgrepo.com/show/530412/user.svg"
+        alt=""
+      />
+      {{/if}}
+      <div id="usuario_id" data-id="{{alumno._id}}">
+        <p >Nombre: {{alumno.nombre}}</p>
+        <p>Apellido: {{alumno.apellido}}</p>
+        <p>Correo: {{alumno.email}}</p>
+        <p>Fecha de comienzo: {{alumno.fecha_registro}}</p>
+      </div>
+    </div>
+  </div>
+ 
+  {{!Hay que agregar tres bloques de codigo uno para rutinas (en este estarán la lista de rutinas y un link que deriva a ellas), otro dietas (los mismo que las rutinas), otro progresos (con imágenes con fechas)}}
+  <section>
+    <h2>RUTINAS</h2>
+  <ul class="listaRutinas">
+  {{#each alumno.rutinas}}
+ 
+    <li><a href="/api/views/rutinaProfesor/{{@index}}/{{../alumno._id}}"><span  class="material-symbols-outlined">exercise</span></a></li>
+  {{/each}}
+  </ul>
+  </section>
+  <section>
+    <h2>DIETAS</h2>
+  </section>
+  <section>
+    <h2>PROGRESOS</h2>
+  </section>
+
+  <a href="/api/users/perfil/profesor/{{alumno.profesor}}">Volver al perfil</a>
+
+</main>
+<footer>&copy; Cantarin Pablo</footer>

@@ -1,0 +1,67 @@
+<header><h1>PERFIL ALUMNO</h1></header>
+<main id="usuario_id" data-id="{{usuario._id}}">
+<div class="datos1">
+  <div>
+   
+      {{#if usuario.foto_perfil}}
+      <img class="imagenPerfil" src="/api/users/ver-foto-perfil-alumno/{{usuario._id}}" alt="" >
+      {{else}}
+      <form action="/api/users/cargar-foto-perfil-alumno/{{usuario._id}}" method="post" enctype="multipart/form-data">
+      <label class="inputFoto" for="fotoPerfil">Elegir foto</label>
+      <input class="archivo" style="display:none;" type="file" name="fotoPerfil" placeholder="Elegir foto" id="fotoPerfil">
+      <button class="cargarFoto"type="submit">Guardar</button>
+      </form>
+      {{/if}}
+  </div>
+  <div>
+  <p>Nombre: {{usuario.nombre}}</p>
+  <p>Apellido: {{usuario.apellido}}</p>
+    </div>
+  </div>
+  
+</div>
+<div class="profesorYRutinas">
+  <div class="profesor">
+{{#if isProfesor}}
+  <h2>PROFESOR</h2>
+  <div>
+    <p>Nombre: {{profesorDesignado.nombre}}</p>
+    <p>Apellido: {{profesorDesignado.apellido}}</p>
+  </div>
+{{else}}
+  <h2>Selecciona tu profesor</h2>
+  <select name="" id="profesores">
+
+    {{#each profesores}}
+      <option value="{{this._id}}">{{this.nombre}}
+        {{this.apellido}}
+        -
+        {{this.alumnos.length}}
+        alumnos</option>
+    {{/each}}
+
+  </select>
+
+  <form action=""><button id="select_profesor" type="submit">Guardar Profesor</button></form>
+{{/if}}
+</div>
+
+<section class="rutinas">
+  <h2>RUTINAS</h2>
+<p>Cantidad: {{usuario.rutinas.length}}</p>
+<ul class="lista">
+{{#each usuario.rutinas}}
+
+<li><a href="/api/views/createPDF/{{@index}}/{{../usuario._id}}"><span class="material-symbols-outlined">
+picture_as_pdf
+</span> </a></li>
+{{/each}}
+</ul>
+</section>
+</div>
+<form  action="/api/session/logout" method="post"><button class="logout"type="submit">Cerrar
+  
+    cesión</button></form>
+</main>
+<footer>Todos los derechos reservados &copy; Cantarin Pablo</footer>
+<script src="/js/perfilAlumno.js"></script>

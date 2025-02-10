@@ -1,0 +1,429 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.aviso{
+  width: 300px;
+  position: "relative";
+  margin: auto;
+  background-color: black;
+  color:white;
+  border-radius: 5px;
+  border: 1px solid white;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+}
+
+.botonAviso{
+  position:"abosulte";
+  background-color: #a4161a;
+  top:10px;
+  right: 10px;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.botonAviso:hover{
+  background-color: white;
+  border:1px solid #a4161a;
+}
+
+header h1 {
+  text-align: center;
+}
+
+main {
+  color: white;
+}
+
+main h2 {
+  text-transform: uppercase;
+  text-align: right;
+  font-size: 1rem;
+  padding-right: 10px;
+}
+.section_ingreso_datos {
+  width: 99%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  border: 2px solid white;
+  padding: 5px;
+  margin: 5px;
+}
+.img_datos {
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+}
+
+.section_ingreso_datos div label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+}
+.section_ingreso_datos input {
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#apellido {
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+.section_ingreso_datos input:focus,
+.obs_agregar textarea:focus {
+  outline: none;
+}
+
+#fecha {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.datos_personales {
+  border-bottom: 1px solid white;
+  padding: 3px;
+  width: 99%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.datos_personales button {
+  background-image: url("https://www.svgrepo.com/show/291843/add.svg");
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-repeat: none;
+  border: 1px solid black;
+  text-decoration: none;
+}
+
+.datos_personales button:hover,
+.section_ingreso_datos button:hover {
+  cursor: pointer;
+}
+
+.dias_grupo {
+  width: 99%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#dia_grupo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+#dia_grupo img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+#dia {
+  width: 50px;
+  text-align: center;
+}
+
+.subtitulos {
+  padding-top: 5px;
+  border-top: 1px solid white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.subtitulos label input {
+  width: 80%;
+}
+
+.eje_obs {
+  width: 99%;
+  border-top: 1px solid white;
+}
+
+.ejercicios_series {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.ejercicios_series,
+.obs_agregar {
+  border: none;
+  margin: 0;
+  padding: 5px;
+  width: 99%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tituloEjercicio {
+  font-weight: bolder;
+}
+
+.dato {
+  font-style: italic;
+}
+
+.ejercicio p {
+  width: 20%;
+}
+
+.obs_agregar textarea {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 5px;
+  height: 1.5rem;
+}
+
+#agregar_ejercicio,
+#agrega_subtitulo {
+  border-radius: 50%;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+}
+#agregar_ejercicio img,
+#agrega_subtitulo img {
+  width: 30px;
+  height: 30px;
+}
+
+#resultados {
+  padding: 5px;
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  text-align: justify;
+}
+
+.liEjercicios {
+  list-style-type: none;
+  height: 100%;
+  background-color: #161a1d;
+}
+
+.liEjercicios:hover {
+  background-color: #a4161a;
+  cursor: pointer;
+}
+
+.liEjercicioSeleccionado {
+  background-color: #a4161a;
+  cursor: pointer;
+  list-style-type: none;
+  height: 100%;
+}
+
+.h2_dia {
+  background-color: #161a1d;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  margin: 5px;
+}
+
+.datos_actuales {
+  display: flex;
+  flex: row;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid white;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+}
+
+.fecha_nombre {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nombre_apellido {
+  font-weight: 500;
+}
+.imagen_perfil {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  box-shadow: 0px 0px 20px gray;
+}
+
+.ejercicio {
+  background-image: linear-gradient(to right, #a4161a, #161a1d);
+  width: 99%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.h3_circuito {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(167, 158, 158);
+  width: 100%;
+  padding-right: 10px;
+}
+
+.h3_circuito h3 {
+  margin-left: 45%;
+}
+
+.imagenV {
+  width: 50px;
+  height: 50px;
+}
+
+.imagenX {
+  width: 50px;
+  height: 50px;
+}
+
+.guardado {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  gap: 50px;
+}
+.btns_guardado {
+  background-color: #a4161a;
+  color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+
+  padding: 5px;
+  height: 2rem;
+}
+
+.btns_guardado:hover {
+  cursor: pointer;
+  background-color: #161a1d;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+footer a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid white;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+footer a:hover {
+  background-color: white;
+  color: black;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 478px) and (min-width: 310px) {
+  .datos_personales,
+  .dias_grupo,
+  .eje_obs {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .datos_personales label,
+  .dias_grupo label,
+  .eje_obs label {
+    width: 99%;
+  }
+
+  .datos_personales label input,
+  .dias_grupo label input,
+  .eje_obs label input,
+  .eje_obs label textarea {
+    width: 80%;
+  }
+
+  #carga_uno,
+  #dia_grupo {
+    margin-left: 85%;
+    width: 50px;
+    height: 50px;
+  }
+
+  #dia_grupo img {
+    width: 50px;
+    height: 50px;
+  }
+  .ejercicios_series {
+    gap: 10px;
+  }
+
+  .subtitulos {
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
