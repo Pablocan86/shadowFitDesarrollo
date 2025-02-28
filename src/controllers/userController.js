@@ -212,6 +212,12 @@ exports.actualizarUsuario = async (req, res) => {
   }
 };
 
+exports.cambiarContrasena = async (req, res) => {
+  let { uid } = req.params;
+  let { contrasenaActual, contrasenaNueva } = req.body;
+  let alumno = await userService.traeUnUsuario(uid);
+};
+
 exports.cargarFotoPerfilAlumno = async (req, res) => {
   const { uid } = req.params;
   try {

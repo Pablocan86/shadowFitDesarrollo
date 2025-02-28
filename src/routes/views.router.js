@@ -24,6 +24,7 @@ router.get(
 );
 
 router.get("/rutina/:number/:uid", viewsController.rutina);
+
 router.get("/rutinaProfesor/:number/:uid", viewsController.rutinaProfesor);
 
 router.get("/createPDF/:number/:uid", viewsController.createPDF);
@@ -49,5 +50,11 @@ router.get("/registroprofesores", (req, res) => {
 router.get("/", (req, res) => {
   res.send({ message: "Pantalla inicio" });
 });
+
+router.get(
+  "/cambiarcontrasena/:uid",
+  isAuthenticated,
+  viewsController.cambioContrasena
+);
 
 module.exports = router;

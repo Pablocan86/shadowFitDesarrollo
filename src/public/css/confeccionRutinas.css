@@ -11,25 +11,31 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.aviso{
+.imagenPerfil {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.aviso {
   width: 300px;
   position: "relative";
   margin: auto;
   background-color: black;
-  color:white;
+  color: white;
   border-radius: 5px;
   border: 1px solid white;
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   padding: 10px;
 }
 
-.botonAviso{
-  position:"abosulte";
+.botonAviso {
+  position: "abosulte";
   background-color: #a4161a;
-  top:10px;
+  top: 10px;
   right: 10px;
   color: black;
   border: none;
@@ -39,9 +45,9 @@ body {
   cursor: pointer;
 }
 
-.botonAviso:hover{
+.botonAviso:hover {
   background-color: white;
-  border:1px solid #a4161a;
+  border: 1px solid #a4161a;
 }
 
 header h1 {
@@ -187,6 +193,30 @@ main h2 {
   position: relative;
 }
 
+.ejercicios_series label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.ejercicios_series label input {
+  height: 2rem;
+  border-radius: 5px;
+  padding-left: 5px;
+  font-size: 1rem;
+}
+
+.obs_agregar label textarea {
+  padding-left: 5px;
+  padding-top: 5px;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 5px;
+  height: 2 rem;
+}
+
 .ejercicios_series,
 .obs_agregar {
   border: none;
@@ -291,16 +321,13 @@ main h2 {
 .nombre_apellido {
   font-weight: 500;
 }
-.imagen_perfil {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  margin: 5px;
-  box-shadow: 0px 0px 20px gray;
+.sectionContainer {
+  background-image: linear-gradient(to right, #a4161a, #161a1d);
+  width: 99%;
+  display: flex;
 }
 
 .ejercicio {
-  background-image: linear-gradient(to right, #a4161a, #161a1d);
   width: 99%;
   display: flex;
   flex-direction: row;
@@ -326,6 +353,18 @@ main h2 {
   margin-left: 45%;
 }
 
+.h3_circuito textarea {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 30%;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+.h3_circuito .modificar {
+  margin-right: 30%;
+}
+
 .imagenV {
   width: 50px;
   height: 50px;
@@ -335,15 +374,16 @@ main h2 {
   width: 50px;
   height: 50px;
 }
-
 .guardado {
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: center;
   gap: 50px;
+  padding-top: 5px;
 }
-.btns_guardado {
+.btns_guardado,
+.btnCustomFile {
   background-color: #a4161a;
   color: white;
   border: 1px solid black;
@@ -353,9 +393,89 @@ main h2 {
   height: 2rem;
 }
 
-.btns_guardado:hover {
+.btns_guardado:hover,
+.btnCustomFile:hover {
   cursor: pointer;
   background-color: #161a1d;
+}
+
+.editObs,
+.modificar,
+.editDia,
+.okNewDia,
+.editCircuito,
+.modificarCircuito {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.editCircuito {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.5ms;
+}
+
+.editCircuito:hover {
+  width: 35px;
+  height: 35px;
+}
+
+.textCircuito {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+.textAreaObs {
+  border-radius: 5px;
+  outline: none;
+  padding: 2px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+}
+
+.grupoMuscularSeleccionado {
+  display: flex;
+  gap: 10px;
+}
+
+.grupoMuscularSeleccionado input {
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.boton-eliminar {
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  outline: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.boton-eliminar:hover {
+  background-color: rgb(241, 54, 54);
+  color: white;
+}
+
+.tiene-boton {
+  width: 99%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
 }
 
 footer {

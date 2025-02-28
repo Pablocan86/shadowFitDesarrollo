@@ -14,17 +14,17 @@ const initializePassport = require("./config/passport.config.js");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-const {transport} = require("./config/mailConfig.js");
+const { transport } = require("./config/mailConfig.js");
 
 //PDF
 
 dotenv.config();
 
 const app = express();
-const PORT = 8080;
+const port = process.env.PORT || 8080;
 
-const httpSever = app.listen(PORT, () =>
-  console.log(`Listeninig on PORT ${PORT}`)
+const httpSever = app.listen(port, () =>
+  console.log(`Listeninig on PORT ${port}`)
 );
 
 // Contraseña de aplicación: nogs crmj xjra mgad
@@ -90,6 +90,5 @@ app.get("/mail", async (req, res) => {
 app.use("/api/users", usersRouter);
 app.use("/api/views", viewsRouter);
 app.use("/api/session", sessionRouter);
-app.use("/api/mp", paymentRouter);
 
 // app.listen(PORT, () => console.log(`Server runninng on PORT:${PORT}`));

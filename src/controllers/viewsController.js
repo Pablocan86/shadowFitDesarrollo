@@ -45,7 +45,11 @@ exports.rutina = async (req, res) => {
   let usuario = await userService.traeUnUsuario(uid);
   let alumno = true;
   let rutina = usuario.rutinas[number];
-  res.render("rutina", { rutina: rutina, alumno });
+  res.render("rutina", {
+    rutina: rutina,
+    alumno,
+    title: `Rutina de ${usuario.nombre} ${usuario.apellido}`,
+  });
 };
 
 exports.rutinaProfesor = async (req, res) => {
@@ -53,7 +57,11 @@ exports.rutinaProfesor = async (req, res) => {
   let usuario = await userService.traeUnUsuario(uid);
 
   let rutina = usuario.rutinas[number];
-  res.render("rutina", { rutina: rutina });
+  res.render("rutina", {
+    rutina: rutina,
+    style: "rutina.css",
+    title: `Rutina de ${usuario.nombre} ${usuario.apellido}`,
+  });
 };
 
 exports.alumnoRegistrado = async (req, res) => {
@@ -99,6 +107,12 @@ exports.createPDF = async (req, res) => {
     console.error("Error al generar el PDF:", error);
     res.status(500).send("Error al generar el PDF");
   }
+};
+
+exports.cambioContrasena = async (req, res) => {
+  let { uid } = req.params;
+  let alumno = await userService.traeUnUsuario(uid);
+  res.render("cambioContrasena", { usuario: alumno });
 };
 
 // exports.createPDF = async (req, res) => {

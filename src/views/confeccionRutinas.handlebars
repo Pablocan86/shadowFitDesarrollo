@@ -49,6 +49,14 @@
         /> --}}
       </label>
       {{! LOGRAR TRAER IMAGEN DE LA FOTO DE PERFIL }}
+
+      <img
+        class="imagenPerfil"
+        id="imagenID"
+        src="/api/users/ver-foto-perfil-alumno/{{alumno._id}}"
+        alt=""
+      />
+
       {{! <label for="input-imagen"><img
           class="img_datos"
           src="https://www.svgrepo.com/show/258843/link.svg"
@@ -64,7 +72,7 @@
     </div>
     <div class="dias_grupo">
       <label for="dia">Día de entrenamiento N°
-        <input type="number" id="dia" /></label>
+        <input type="number" id="dia" min"1"/></label>
 
       <label for="grupo"><img
           class="img_datos"
@@ -97,7 +105,12 @@
         <img src="https://www.svgrepo.com/show/256722/folder-add.svg" alt="" />
       </button>
     </div>
-    <div class="eje_obs">
+  </section>
+  <section id="muestra_rutina">
+    <div id="ingreso_fecha"></div>
+    <article id="ingreso_rutina"></article>
+  </section>
+   <div class="eje_obs">
       <div class="ejercicios_series">
         <label for="ejercicios"><img
             class="img_datos"
@@ -146,19 +159,27 @@
         </button>
       </div>
     </div>
-  </section>
-  <section id="muestra_rutina">
-    <div id="ingreso_fecha"></div>
-    <article id="ingreso_rutina"></article>
-  </section>
   <div class="guardado">
-    <button class="btns_guardado" id="generarDocumento">Crear Rutina</button><button
-      class="btns_guardado"
-      id="guardarRutina"
-    >Guardar</button>
-
-    <button class="btns_guardado" id="borrarRutina">Borrar</button>
-  </div>
+        <button class="btns_guardado" id="generarDocumento">
+          Crear Rutina Alumno
+        </button>
+        <button class="btns_guardado" id="generarDocProf">
+          Crear rutina Profesor
+        </button>
+        <button class="btns_guardado" id="guardarRutina">
+          Guardado Provisorio
+        </button>
+        <button class="btns_guardado" id="borrarRutina">Borrar</button>
+        <label for="rutinaGuardada" class="btnCustomFile">Subir archivo</label>
+        <input
+          type="file"
+          class="btns_guardado"
+          name="rutinaGuardada"
+          id="rutinaGuardada"
+          accept=".html"
+          style="display: none"
+        />
+      </div>
 </main>
 <footer><a href="/api/users/perfil/profesor/{{profesor._id}}">Volver al perfil</a></footer>
 
