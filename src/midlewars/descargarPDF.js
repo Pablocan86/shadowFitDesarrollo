@@ -18,8 +18,6 @@ async function crearRutina(url) {
   // Generar el PDF y guardarlo en el disco
   let pdfBuffer = await pagina.pdf({ format: "A4", printBackground: true });
 
-  // VAmos a crear nuestro PDF
-
   // Cerramos el navegador
 
   await navegador.close();

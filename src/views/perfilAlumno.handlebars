@@ -49,11 +49,10 @@
 
 <section class="rutinas">
   <h2>RUTINAS</h2>
-<p>Cantidad: {{usuario.rutinas.length}}</p>
 <ul class="lista">
 {{#each usuario.rutinas}}
 
-<li><a href="/api/views/createPDF/{{@index}}/{{../usuario._id}}"><span class="material-symbols-outlined">
+<li><p>Fecha: {{this.fecha}}</p> <a href="/api/views/createPDF/{{@index}}/{{../usuario._id}}" target="_blank"><span class="material-symbols-outlined">
 picture_as_pdf
 </span> </a></li>
 {{/each}}

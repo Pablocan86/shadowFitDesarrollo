@@ -213,11 +213,29 @@ exports.actualizarUsuario = async (req, res) => {
 };
 
 exports.cambiarContrasena = async (req, res) => {
-  let { uid } = req.params;
-  let { contrasenaActual, contrasenaNueva } = req.body;
-  let alumno = await userService.traeUnUsuario(uid);
-};
+  try {
+    let { uid } = req.params;
+    let { contrasenaActual, contrasenaNueva } = req.body;
+    let alumno = await userService.traeUnUsuario(uid);
 
+    if (!alumno) {
+      return res.status(404).json({ message: "Usuario no encontrado" });
+    }
+    if (!isValidPassword(alumno, contrasenaActual)) {
+      return res.status(401).json({ message: "Contraseña actual incorrecta" });
+    }
+
+    //Hashear la nueva contraseña
+    const newPassword = createHash(contrasenaNueva);
+
+    //Actualizar la contraseña en la base de datos
+    await userService.actualizaPropiedad(uid, { password: newPassword });
+    res.json({ message: "Contraseña cambiada correctamente" });
+  } catch (error) {
+    console.error("Error al camiar la contraseña: ", error);
+    res.status(500).json({ message: "Error interno del servidor" });
+  }
+};
 exports.cargarFotoPerfilAlumno = async (req, res) => {
   const { uid } = req.params;
   try {
