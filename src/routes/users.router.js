@@ -45,7 +45,7 @@ router.get(
   userController.traerImagenPerfilProfesor
 );
 
-router.post(
+router.put(
   "/cambiarcontrasena/:uid",
   isAuthenticated,
   userController.cambiarContrasena

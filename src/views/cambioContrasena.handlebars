@@ -1,7 +1,11 @@
-<form action="/api/users/cambiarcontrasena/{{usuario._id}}" method="POST">
+<form
+  id="formCambioContrasena"
+  action="/api/users/cambiarcontrasena/{{usuario._id}}"
+>
   <label for="contrasenaActual">Contraseña Actual</label>
   <input type="text" name="contrasenaActual" id="contrasenaActual" />
   <label for="contrasenaNueva">Contraseña Nueva</label>
   <input type="text" name="contrasenaNueva" id="contrasenaNueva" />
   <button type="submit">Aceptar</button>
 </form>
+<script src="/js/cambiarContrasena.js"></script>
