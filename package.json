@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
+    "start": "node src/app.js",
+    "postinstall": "npx puppeteer browsers install chrome",
     "test": "node --watch src/app.js",
     "dev": "nodemon server"
   },

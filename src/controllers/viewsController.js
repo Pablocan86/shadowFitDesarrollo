@@ -104,9 +104,10 @@ exports.createPDF = async (req, res) => {
 
   try {
     // //Crear la rutina
-    let pdf = await crearRutina(
-      `http://localhost:8080/api/views/rutina/${number}/${uid}`
-    );
+
+    let pdf = await crearRutina(rutinaHtml);
+
+    // let pdf = await crearRutina(`http://localhost:8080/api/views/rutina/${number}/${uid}`);
 
     // // Devolvver el response como PDF
 
