@@ -9,6 +9,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     unique: true,
   },
+  telefono: {
+    type: Number,
+    unique: true,
+  },
   password: String,
   cumpleanos: String,
   fecha_registro: String,

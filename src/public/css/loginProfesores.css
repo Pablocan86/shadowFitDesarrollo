@@ -46,6 +46,14 @@ form {
 form input {
   width: 90%;
   height: 25px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+
+form input:focus {
+  box-shadow: 0px 0px 10px gray;
 }
 
 form button {
@@ -64,14 +72,41 @@ form button:hover {
   color: white;
 }
 
+.registro {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  background-color: #007bff;
+  width: 90%;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  height: 25px;
+}
+.registro:hover {
+  background-color: #0056b3;
+}
+
 .volver {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
   background-color: black;
   border-radius: 10px;
   color: white;
-  width: 200px;
-  height: 1.5rem;
+  width: auto;
   text-decoration: none;
   text-align: center;
+}
+
+.volver:hover {
+  background-color: white;
+  color: black;
 }
 
 footer {

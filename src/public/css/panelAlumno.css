@@ -5,6 +5,7 @@
 }
 
 body {
+  background: linear-gradient(to bottom, #0a0a0a, #33312f, rgb(78, 3, 3));
   height: 100%;
   width: 100%;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -29,9 +30,11 @@ main {
 }
 
 .alumnoCuadro {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.692);
   padding: 10px;
   width: 90%;
-
+  backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
   border-radius: 5px;
@@ -43,6 +46,7 @@ main {
   width: 200px;
   height: 200px;
   border: 1px solid black;
+  border-radius: 50%;
 }
 .datos1 {
   display: flex;
@@ -52,7 +56,7 @@ main {
 }
 
 main section {
-  width: 99%;
+  width: 100%;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
@@ -67,6 +71,7 @@ main section h2 {
 }
 
 .listaRutinas {
+  width: 100%;
   padding-top: 10px;
   display: flex;
   list-style: none;
@@ -78,26 +83,48 @@ main section h2 {
   padding-bottom: 5px;
 }
 .listaRutinas li {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.678);
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  width: 40px;
+  padding: 2px 5px 2px 5px;
+  width: 99%;
   height: 40px;
   border-radius: 5px;
-  border: 1px solid black;
-}
-
-.listaRutinas li:hover {
-  background-color: black;
-  color: white;
+  backdrop-filter: blur(10px);
 }
 
 .material-symbols-outlined {
-  color: black;
+  color: white;
+  font-size: 2rem;
+  transition: all 1s;
 }
 
 .material-symbols-outlined:hover {
+  scale: 1.2;
+}
+
+.volver {
+  background-color: black;
+  border-radius: 10px;
   color: white;
+  width: auto;
+  height: 2rem;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+}
+
+.volver:hover {
+  background-color: white;
+  color: black;
 }
 
 footer {

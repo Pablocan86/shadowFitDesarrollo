@@ -325,6 +325,7 @@ main h2 {
   background-image: linear-gradient(to right, #a4161a, #161a1d);
   width: 99%;
   display: flex;
+  cursor: move;
 }
 
 .ejercicio {

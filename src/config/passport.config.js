@@ -17,7 +17,7 @@ const initializePassport = () => {
         passwordField: "password",
       },
       async (req, username, password, done) => {
-        const { nombre, apellido, email, cumpleanos } = req.body;
+        const { nombre, apellido, email, telefono, cumpleanos } = req.body;
 
         try {
           let user = await userService.traeUnUsuarioEmail(username);
@@ -30,6 +30,7 @@ const initializePassport = () => {
             nombre,
             apellido,
             email,
+            telefono,
             password: createHash(password),
             cumpleanos,
             foto_perfil: null,
@@ -53,7 +54,7 @@ const initializePassport = () => {
         passwordField: "password",
       },
       async (req, username, password, done) => {
-        const { nombre, apellido, email, cumpleanos } = req.body;
+        const { nombre, apellido, email, telefono, cumpleanos } = req.body;
 
         try {
           let user = await userService.traeUnProfesorEmail(username);
@@ -66,6 +67,7 @@ const initializePassport = () => {
             nombre,
             apellido,
             email,
+            telefono,
             password: createHash(password),
             cumpleanos,
             fecha_registro: fechaActual,

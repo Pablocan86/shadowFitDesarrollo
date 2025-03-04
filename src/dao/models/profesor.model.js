@@ -9,6 +9,10 @@ const profesorSchema = new mongoose.Schema({
     type: String,
     unique: true,
   },
+  telefono: {
+    type: Number,
+    unique: true,
+  },
   foto_perfil: {
     data: Buffer,
     contentType: String,

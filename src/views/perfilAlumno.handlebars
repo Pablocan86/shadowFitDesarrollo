@@ -13,10 +13,11 @@
       </form>
       {{/if}}
   </div>
-  <div>
+  <div class="datosEspecificos">
   <p>Nombre: {{usuario.nombre}}</p>
   <p>Apellido: {{usuario.apellido}}</p>
-  <a href="/api/views/cambiarcontrasena/{{usuario._id}}">Cambiar contraseña</a>
+  <p>Correo: {{usuario.email}}</p>
+  <a class="cambiarContrasena" href="/api/views/cambiarcontrasena/{{usuario._id}}">Cambiar contraseña</a>
     </div>
   </div>
   
@@ -25,9 +26,14 @@
   <div class="profesor">
 {{#if isProfesor}}
   <h2>PROFESOR</h2>
-  <div>
-    <p>Nombre: {{profesorDesignado.nombre}}</p>
-    <p>Apellido: {{profesorDesignado.apellido}}</p>
+  <div class="datosProfesor">
+    <img src="/api/users/ver-foto-perfil-profesor/{{profesorDesignado._id}}" alt="">
+    <div>
+      <p>Nombre: {{profesorDesignado.nombre}}</p>
+      <p>Apellido: {{profesorDesignado.apellido}}</p>
+      <p>Correo: {{profesorDesignado.email}}</p>
+      <p>Teléfono: {{profesorDesignado.telefono}}</p>
+    </div>
   </div>
 {{else}}
   <h2>Selecciona tu profesor</h2>

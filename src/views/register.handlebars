@@ -2,23 +2,25 @@
 <main>
   {{#if message}}
   <h3>{{message}}</h3>
-  <a href="/api/views/login">Loguearme</a>
+  <a class="logueo" href="/api/views/login">Loguearme</a>
   {{else}}
   <form action="../../api/session/register" method="POST">
     <h4>REGISTRO</h4>
     <label for="nombre">Nombre:</label>
-    <input type="text" name="nombre" id="nombre" />
+    <input type="text" name="nombre" id="nombre" placeholder="Escriba su nombre..."/>
     <label for="apellido">Apellido:</label>
-    <input type="text" name="apellido" id="apellido" />
+    <input type="text" name="apellido" id="apellido" placeholder="Escriba su apellido..."/>
     <label for="email">Correo electrónico:</label>
-    <input type="email" name="email" id="email" />
+    <input type="email" name="email" id="email" placeholder="alumno@alumno.com"/>
+    <label for="telefono">Teléfono: </label>
+    <input type="number"  name="telefono" id="telefono" placeholder="+541155555555">
     <label for="password">Contraseña:</label>
-      <input type="password" name="password" id="password" />
+      <input type="password" name="password" id="password" placeholder="Escriba su contraseña..." pattern="^\S+$"/>
     <label for="nacimiento">Fecha nacimiento:</label>
       <input type="date" name="cumpleanos" id="nacimiento" /></label>
     <button type="submit">Registrarme</button>
   </form>
   {{/if}}
-  <a class="volver" href="/api/views/paginaprincipal">Ir a página principal</a>
+  <a class="volver" href="/api/views/paginaprincipal">🏠 Ir a página principal</a>
 </main>
 <footer>Copyright Cantarin Pablo</footer>

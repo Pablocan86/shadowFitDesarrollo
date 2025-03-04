@@ -1,11 +1,18 @@
-<form
-  id="formCambioContrasena"
-  action="/api/users/cambiarcontrasena/{{usuario._id}}"
->
-  <label for="contrasenaActual">Contraseña Actual</label>
-  <input type="text" name="contrasenaActual" id="contrasenaActual" />
-  <label for="contrasenaNueva">Contraseña Nueva</label>
-  <input type="text" name="contrasenaNueva" id="contrasenaNueva" />
-  <button type="submit">Aceptar</button>
-</form>
+<header>
+  <h2>CAMBIO CONTRASEÑA</h2>
+</header>
+<main>
+  <form
+    id="formCambioContrasena"
+    action="/api/users/cambiarcontrasena/{{usuario._id}}"
+  >
+    <label for="contrasenaActual">Contraseña Actual</label>
+    <input type="password" name="contrasenaActual" id="contrasenaActual" />
+    <label for="contrasenaNueva">Contraseña Nueva</label>
+    <input type="password" name="contrasenaNueva" id="contrasenaNueva" />
+    <button type="submit">Aceptar</button>
+  </form>
+  <a class="volver" href="/api/views/paginaprincipal">🏠 Ir a página principal</a>
+</main>
+<footer>Copyright Cantarin Pablo</footer>
 <script src="/js/cambiarContrasena.js"></script>

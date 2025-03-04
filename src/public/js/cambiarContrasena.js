@@ -15,7 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ contrasenaActual, contrasenaNueva }),
+        body: JSON.stringify({
+          contrasenaActual: contrasenaActual,
+          contrasenaNueva: contrasenaNueva,
+        }),
       });
 
       const data = await response.json();
@@ -24,12 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const divAviso = document.createElement("div");
         divAviso.id = "divAviso";
         divAviso.innerHTML = `<p>${data.message}</p><button id="btnCerrarAviso">Aceptar</button>`;
-        divAviso.style.width = "300px";
-        divAviso.style.height = "300px";
-        divAviso.style.position = "abosulte";
-        divAviso.style.background = "black";
-        divAviso.style.color = "white";
-        body.appendChild(divAviso);
+        form.appendChild(divAviso);
         if (divAviso) {
           const button = document.querySelector("#btnCerrarAviso");
           button.addEventListener("click", async () => {

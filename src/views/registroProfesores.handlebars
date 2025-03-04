@@ -7,18 +7,46 @@
     <form action="../../api/session/registroprofesores" method="POST">
       <h4>REGISTRO</h4>
       <label for="nombre">Nombre:</label>
-      <input type="text" name="nombre" id="nombre" />
+      <input
+        type="text"
+        name="nombre"
+        id="nombre"
+        placeholder="Escribe tu nombre..."
+      />
       <label for="apellido">Apellido:</label>
-      <input type="text" name="apellido" id="apellido" />
+      <input
+        type="text"
+        name="apellido"
+        id="apellido"
+        placeholder="Escribe tu apellido..."
+      />
       <label for="email">Correo electrónico:</label>
-      <input type="email" name="email" id="email" />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="profesor@profesor.com"
+      />
+      <label for="telefono">Teléfono: </label>
+      <input
+        type="number"
+        name="telefono"
+        id="telefono"
+        placeholder="+541155555555"
+      />
       <label for="password">Contraseña:</label>
-      <input type="password" name="password" id="password" />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Escribe tu contraseña"
+        pattern="^\S+$"
+      />
       <label for="nacimiento">Fecha nacimiento:</label>
-      <input type="date" name="cumpleanos" id="nacimiento" />
-      <button type="submit">Registrarme</button>
+      <input type="date" name="cumpleanos"  id="nacimiento" />
+      <button class="registro" type="submit">Registrarme</button>
     </form>
   {{/if}}
-  <a class="volver" href="/api/views/paginaprincipal">Ir a página principal</a>
+  <a class="volver" href="/api/views/paginaprincipal"><<< Ir a página principal</a>
 </main>
 <footer>Copyrigth Cantarin Pablo</footer>

@@ -66,11 +66,11 @@
         {{/each}}
       </ul>
     {{else}}
-      <p>Aun no tiene alumnos</p>
+      <p class="sinAlumnos"> 😴 Aun no tiene alumnos 😴</p>
 
     {{/if}}
   </section>
-  <a class="volver" href="/api/views/paginaprincipal">Ir a página principal</a>
+  <a class="volver" href="/api/views/paginaprincipal"><<< Ir a página principal</a>
 
   <form action="/api/session/logout" method="post"><button
       class="logout"

@@ -32,7 +32,12 @@
   <ul class="listaRutinas">
   {{#each alumno.rutinas}}
  
-    <li><a href="/api/views/rutinaProfesor/{{@index}}/{{../alumno._id}}" target="_blank"><span  class="material-symbols-outlined">exercise</span></a></li>
+    <li>
+      <p>Fecha: {{this.fecha}}</p>
+      <a href="/api/views/rutinaProfesor/{{@index}}/{{../alumno._id}}" target="_blank">
+        <span  class="material-symbols-outlined">multimodal_hand_eye</span>
+      </a>
+    </li>
   {{/each}}
   </ul>
   </section>
@@ -43,7 +48,7 @@
     <h2>PROGRESOS</h2>
   </section>
 
-  <a href="/api/users/perfil/profesor/{{alumno.profesor}}">Volver al perfil</a>
+  <a class="volver" href="/api/users/perfil/profesor/{{alumno.profesor}}">Volver al perfil</a>
 
 </main>
 <footer>&copy; Cantarin Pablo</footer>
