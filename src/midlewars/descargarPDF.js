@@ -3,7 +3,7 @@ const UserManager = require("../dao/classes/users.dao.js");
 
 const userService = new UserManager();
 
-async function crearRutina(htmlContent) {
+async function crearRutina(url) {
   // Abrir navegador
   let navegador = await puppeteer.launch({
     headless: "new",
