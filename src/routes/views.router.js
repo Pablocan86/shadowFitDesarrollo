@@ -10,6 +10,7 @@ const router = Router();
 router.get("/chat", (req, res) => {
   res.render("chat", { title: "chat" });
 });
+router.get("/", viewsController.home);
 
 router.get("/paginaprincipal", viewsController.home);
 

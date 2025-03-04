@@ -87,6 +87,7 @@ app.get("/mail", async (req, res) => {
   res.send({ correo: "Correo enviado" });
 });
 
+app.use("/", viewsRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/views", viewsRouter);
 app.use("/api/session", sessionRouter);
