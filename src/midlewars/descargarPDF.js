@@ -14,8 +14,8 @@ async function crearRutina(url) {
   let pagina = await navegador.newPage();
 
   // Abrir al url dentro de esta pagina
-  // await pagina.goto(htmlContent, { waitUntil: "networkidle2" });
-  await pagina.setContent(htmlContent, { waitUntil: "domcontentloaded" });
+  await pagina.goto(htmlContent, { waitUntil: "networkidle2" });
+  // await pagina.setContent(htmlContent, { waitUntil: "domcontentloaded" });
   // Mostramos los estilos en la nueva página
   await pagina.emulateMediaType("screen");
   // let pdf = await pagina.pdf();
