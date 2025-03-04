@@ -103,12 +103,14 @@ exports.createPDF = async (req, res) => {
   let user = await userService.traeUnUsuario(uid);
   let rutinaHtml = user.rutinas[number].vistaAlumno;
 
-  try {
-    // let pdf = await crearRutina(rutinaHtml);
+  console.log("HTML contenido: ", rutinaHtml);
 
-    let pdf = await crearRutina(
-      `https://shadow-fit.onrender.com/api/views/rutina/${number}/${uid}`
-    );
+  try {
+    let pdf = await crearRutina(rutinaHtml);
+
+    // let pdf = await crearRutina(
+    //   `https://shadow-fit.onrender.com/api/views/rutina/${number}/${uid}`
+    // );
 
     // // Devolvver el response como PDF
 
