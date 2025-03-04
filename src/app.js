@@ -23,7 +23,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8080;
 
-const httpSever = app.listen(port, () =>
+const httpSever = app.listen(port, "0.0.0.0", () =>
   console.log(`Listeninig on PORT ${port}`)
 );
 

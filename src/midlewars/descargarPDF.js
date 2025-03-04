@@ -5,7 +5,10 @@ const userService = new UserManager();
 
 async function crearRutina(url) {
   // Abrir navegador
-  let navegador = await puppeteer.launch();
+  let navegador = await puppeteer.launch({
+    args: ["--no-sandobx", "--disable-setuid-sanbox"],
+    executablePath: process.env.CRHOME_EXECUTABLE_PATH || undefined,
+  });
 
   // Creamos una nueva pestaña o pagina
   let pagina = await navegador.newPage();
