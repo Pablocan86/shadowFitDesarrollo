@@ -8,14 +8,13 @@ async function crearRutina(htmlContent) {
   let navegador = await puppeteer.launch({
     headless: "new",
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    executablePath:
-      process.env.CHROME_EXECUTABLE_PATH || (await puppeteer.executablePath()),
   });
 
   // Creamos una nueva pestaña o pagina
   let pagina = await navegador.newPage();
 
   // Abrir al url dentro de esta pagina
+  // await pagina.goto(htmlContent, { waitUntil: "networkidle2" });
   await pagina.setContent(htmlContent, { waitUntil: "domcontentloaded" });
   // Mostramos los estilos en la nueva página
   await pagina.emulateMediaType("screen");
