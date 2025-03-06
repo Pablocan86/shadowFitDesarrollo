@@ -3,7 +3,7 @@ const UserManager = require("../dao/classes/users.dao.js");
 
 const userService = new UserManager();
 
-async function crearRutina(htmlContent) {
+async function crearRutina(contenido) {
   // Abrir navegador
   let navegador = await puppeteer.launch({
     headless: true,
@@ -15,7 +15,7 @@ async function crearRutina(htmlContent) {
 
   // Abrir al url dentro de esta pagina
   // await pagina.goto(url, { waitUntil: "networkidle2" });
-  await pagina.setContent(htmlContent, { waitUntil: "domcontentloaded" });
+  await pagina.setContent(contenido, { waitUntil: "domcontentloaded" });
   // Mostramos los estilos en la nueva página
   await pagina.emulateMediaType("screen");
   // let pdf = await pagina.pdf();
