@@ -6,8 +6,7 @@ const userService = new UserManager();
 async function crearRutina(contenido) {
   // Abrir navegador
   let navegador = await puppeteer.launch({
-    executablePath: "/usr/bin/google-chrome-stable",
-    headless: true,
+    headless: "new",
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
 
