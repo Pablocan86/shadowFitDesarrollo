@@ -6,6 +6,7 @@ const userService = new UserManager();
 async function crearRutina(contenido) {
   // Abrir navegador
   let navegador = await puppeteer.launch({
+    executablePath: "/usr/bin/chromium",
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
@@ -14,8 +15,8 @@ async function crearRutina(contenido) {
   let pagina = await navegador.newPage();
 
   // Abrir al url dentro de esta pagina
-  // await pagina.goto(url, { waitUntil: "networkidle2" });
-  await pagina.setContent(contenido, { waitUntil: "domcontentloaded" });
+  await pagina.goto(contenido, { waitUntil: "networkidle2" });
+  // await pagina.setContent(contenido, { waitUntil: "domcontentloaded" });
   // Mostramos los estilos en la nueva página
   await pagina.emulateMediaType("screen");
   // let pdf = await pagina.pdf();

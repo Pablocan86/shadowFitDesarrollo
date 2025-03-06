@@ -114,7 +114,7 @@ exports.createPDF = async (req, res) => {
 
     res.contentType("application/pdf");
 
-    res.end(pdf);
+    res.send(pdf);
   } catch (error) {
     console.error("Error al generar el PDF:", error);
     res.status(500).send("Error al generar el PDF");
