@@ -104,11 +104,11 @@ exports.createPDF = async (req, res) => {
   let rutinaHtml = user.rutinas[number].vistaAlumno;
 
   try {
-    let pdf = await crearRutina(rutinaHtml);
+    // let pdf = await crearRutina(rutinaHtml);
 
-    // let pdf = await crearRutina(
-    //   `http://localhost:8080/api/views/rutina/${number}/${uid}`
-    // );
+    let pdf = await crearRutina(
+      `http://localhost:8080/api/views/rutina/${number}/${uid}`
+    );
 
     // // Devolvver el response como PDF
 
