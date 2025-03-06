@@ -110,7 +110,7 @@ exports.createPDF = async (req, res) => {
     // let pdf = await crearRutina(rutinaHtml);
 
     let pdf = await crearRutina(
-      `http://localhost:8080/api/views/rutina/${number}/${uid}`
+      `${BASE_URL}/api/views/rutina/${number}/${uid}`
     );
 
     // let pdf = await crearRutina(url);
