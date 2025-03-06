@@ -4,6 +4,8 @@ const { crearRutina } = require("../midlewars/descargarPDF.js");
 const { transport } = require("../config/mailConfig.js");
 const userService = new UserManager();
 
+const BASE_URL = process.env.BASE_URL || "http://localhost:8080";
+
 exports.home = async (req, res) => {
   if (!req.session.user) {
     return res.render("home", { style: "home.css", title: "Página principal" });
@@ -102,19 +104,24 @@ exports.createPDF = async (req, res) => {
   let { number, uid } = req.params;
   let user = await userService.traeUnUsuario(uid);
   let rutinaHtml = user.rutinas[number].vistaAlumno;
+  const url = `${BASE_URL}/api/views/rutina/${number}/${uid}`;
 
   try {
     // let pdf = await crearRutina(rutinaHtml);
 
+    // let pdf = await crearRutina(
+    //   `http://localhost:8080/api/views/rutina/${number}/${uid}`
+    // );
+
     let pdf = await crearRutina(
-      `http://localhost:8080/api/views/rutina/${number}/${uid}`
+      `${BASE_URL}/api/views/rutina/${number}/${uid}`
     );
 
     // // Devolvver el response como PDF
 
     res.contentType("application/pdf");
 
-    res.send(pdf);
+    res.end(pdf);
   } catch (error) {
     console.error("Error al generar el PDF:", error);
     res.status(500).send("Error al generar el PDF");
