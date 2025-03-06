@@ -4,7 +4,6 @@
   "main": "app.js",
   "scripts": {
     "start": "node src/app.js",
-    "postinstall": "apt-get update && apt-get install -y chromium",
     "test": "node --watch src/app.js",
     "dev": "nodemon server"
   },
