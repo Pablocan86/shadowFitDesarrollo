@@ -12,6 +12,7 @@ body {
 }
 
 header {
+  width: 100%;
   background-color: black;
   color: white;
   display: flex;
@@ -136,4 +137,55 @@ footer {
   color: white;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header nav {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+  }
+
+  .roboto-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+  .divOpacity h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    padding-left: 0px;
+  }
+  .infoServicios {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .divCuadro {
+    width: 80%;
+  }
+}
+
+@media (max-width: 890px) and (min-width: 390px) {
+  .divOpacity h3 {
+    font-size: 2rem;
+    text-align: center;
+  }
 }
