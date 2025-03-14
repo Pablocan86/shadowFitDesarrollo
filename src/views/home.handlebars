@@ -16,10 +16,10 @@
       {{/if}}
   <nav>
     
-    <ul>
-      <li>Home</li>
-      <li>Novedades</li>
-      <li>Rutinas</li>
+    <ul class="roboto-list">
+      <li>HOME</li>
+      <li>NOVEDADES</li>
+      <li>RUTINAS</li>
       {{#if session}}
         {{#if alumno}}
           <li>
@@ -28,19 +28,36 @@
         {{#if profesor}}
           <li><a
               href="/api/users/perfil/profesor/{{profesor.id}}"
-            >Perfil</a></li>
+            >PERFIL </a></li>
 
         {{/if}}
       {{else}}
         
-          <li><a href="/api/views/login">Alumnos</a></li>
-          <li><a href="/api/views/loginprofesores">Profesores</a></li>
+          <li><a href="/api/views/login">ALUMNOS</a></li>
+          <li><a href="/api/views/loginprofesores">PROFESORES</a></li>
         </div>
       {{/if}}
     </ul>
   </nav>
 </header>
 <main>
-
+<div class="divOpacity">
+  <h3>SUMATE AL MEJOR</h3>
+  <h3> EQUIPO DE ENTRENAMIENTO</h3>
+  <section class="infoServicios">
+    <div class="divCuadro">
+      <h4 class="h4Top">ENTRENAMIENTOS</h4><h4>PERSONALIZADOS</h4>
+      <img src="https://aiguajoc.com/wp-content/uploads/entrenador-personal-beneficios-aiguajoc.webp" alt="">
+    </div>
+    <div class="divCuadro">
+      <h4 class="h4Top">ENTRENAMIENTOS</h4> <h4>EN GRUPO</h4>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsA6SbE4IDHu25hiRmqynHW1HDFsJt2R5sBg&s" alt="">
+    </div>
+    <div class="divCuadro">
+      <h4 class="h4Top">SEGUIMIENTOS</h4> <h4>A DISTANCIA</h4>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeOPbmL2edHabDNvvDdrQdXWgtzOClug5k_A&s" alt="">
+    </div>
+  </section>
+</div>
 </main>
-<footer></footer>
+<footer><h6>&copy; Cantarin Pablo</h6></footer>

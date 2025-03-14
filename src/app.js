@@ -37,25 +37,25 @@ app.use(
   })
 );
 
-app.get("/files", async (req, res) => {
-  const result = await getFiles();
-  res.json(result.Contents);
-});
+// app.get("/files", async (req, res) => {
+//   const result = await getFiles();
+//   res.json(result.Contents);
+// });
 
-app.post("/files", async (req, res) => {
-  const prueba = "<h1>hola</h1>";
-  const nombreArchivo = "pija2.pdf";
-  const result = await crearPDF(prueba, nombreArchivo);
-  const resultado = await uploadFile(result, nombreArchivo);
-  console.log(resultado);
-  res.send({ message: "subida exitos" });
-});
+// app.post("/files", async (req, res) => {
+//   const prueba = "<h1>hola</h1>";
+//   const nombreArchivo = "pija2.pdf";
+//   const result = await crearPDF(prueba, nombreArchivo);
+//   const resultado = await uploadFile(result, nombreArchivo);
+//   console.log(resultado);
+//   res.send({ message: "subida exitos" });
+// });
 
-app.get("/files/:fileName", async (req, res) => {
-  const result = await getFileURL(req.params.fileName);
-  // await decargar;
-  res.redirect(result);
-});
+// app.get("/files/:fileName", async (req, res) => {
+//   const result = await getFileURL(req.params.fileName);
+//   // await decargar;
+//   res.redirect(result);
+// });
 
 const socketServer = new Server(httpSever);
 //Secreto
