@@ -26,6 +26,8 @@ router.put("/cargarprofesor/:uid/:pid", userController.cargarProfesor);
 
 router.put("/cargarrutina/:uid", userController.cargarRutina);
 
+router.get("/files", userController.files);
+
 router.post(
   "/cargar-foto-perfil-alumno/:uid",
   upload.single("fotoPerfil"),
@@ -46,6 +48,8 @@ router.get(
 );
 
 router.put("/cambiarcontrasena/:uid", userController.cambiarContrasena);
+
+// router.get("/upload", userController.upload);
 
 // router.post(
 //   "/cargar-foto-perfil-profesor/:uid",

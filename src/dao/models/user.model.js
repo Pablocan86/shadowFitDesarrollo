@@ -25,6 +25,7 @@ const userSchema = new mongoose.Schema({
     type: [
       {
         fecha: { type: String },
+        nombreArchivo: { type: String },
         vistaAlumno: { type: String },
         vistaProfesor: { type: String },
       },

@@ -58,7 +58,8 @@
 <ul class="lista">
 {{#each usuario.rutinas}}
 
-<li><p>Fecha: {{this.fecha}}</p> <a href="/api/views/createPDF/{{@index}}/{{../usuario._id}}" target="_blank"><span class="material-symbols-outlined">
+{{!-- <li><p>Fecha: {{this.fecha}}</p> <a href="/api/views/createPDF/{{@index}}/{{../usuario._id}}" target="_blank"><span class="material-symbols-outlined"> --}}
+<li><p>Fecha: {{this.fecha}}</p> <a href="/api/views/verrutina/{{this.nombreArchivo}}/{{../usuario._id}}" target="_blank"><span class="material-symbols-outlined">
 picture_as_pdf
 </span> </a></li>
 {{/each}}

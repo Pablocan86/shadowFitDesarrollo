@@ -1036,6 +1036,7 @@ document
 
     let bodyPropiedad = {
       fecha: fechaRutina,
+      nombreArchivo: ``,
       vistaAlumno: nuevoDocumento,
       vistaProfesor: documentoProfesor,
     };

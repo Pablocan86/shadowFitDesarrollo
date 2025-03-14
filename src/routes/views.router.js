@@ -30,6 +30,7 @@ router.get("/rutinaProfesor/:number/:uid", viewsController.rutinaProfesor);
 
 router.get("/createPDF/:number/:uid", viewsController.createPDF);
 
+router.get("/verrutina/:name/:uid", viewsController.verRutina);
 router.get("/loginprofesores", isNotAuthenticatedProfesor, (req, res) => {
   res.render("loginProfesores", {
     style: "loginProfesores.css",

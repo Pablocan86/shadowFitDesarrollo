@@ -15,8 +15,11 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const { transport } = require("./config/mailConfig.js");
+const fileUpload = require("express-fileupload");
+const { uploadFile, getFiles, getFileURL } = require("./config/s3.js");
 
 //PDF
+const { crearPDF } = require("./midlewars/descargarPDF.js");
 
 dotenv.config();
 
@@ -27,16 +30,32 @@ const httpSever = app.listen(port, "0.0.0.0", () =>
   console.log(`Listeninig on PORT ${port}`)
 );
 
-// Contraseña de aplicación: nogs crmj xjra mgad
-// const transport = nodemailer.createTransport({
-//   host: "smtp.gmail.com",
-//   port: 465,
-//   secure: true,
-//   auth: {
-//     user: "shadowfit.info@gmail.com",
-//     pass: "nogs crmj xjra mgad",
-//   },
-// });
+app.use(
+  fileUpload({
+    useTempFiles: true,
+    tempFileDir: "./uploads",
+  })
+);
+
+app.get("/files", async (req, res) => {
+  const result = await getFiles();
+  res.json(result.Contents);
+});
+
+app.post("/files", async (req, res) => {
+  const prueba = "<h1>hola</h1>";
+  const nombreArchivo = "pija2.pdf";
+  const result = await crearPDF(prueba, nombreArchivo);
+  const resultado = await uploadFile(result, nombreArchivo);
+  console.log(resultado);
+  res.send({ message: "subida exitos" });
+});
+
+app.get("/files/:fileName", async (req, res) => {
+  const result = await getFileURL(req.params.fileName);
+  // await decargar;
+  res.redirect(result);
+});
 
 const socketServer = new Server(httpSever);
 //Secreto
@@ -77,15 +96,15 @@ const connectMongoDB = async () => {
 
 connectMongoDB();
 
-app.get("/mail", async (req, res) => {
-  let result = await transport.sendMail({
-    from: "Shadow Fit <shadowfit.info@gmail.com",
-    to: "pablo.cantarin86@gmail.com",
-    subject: "Correo prueba",
-    html: `<h1>HOLA PROBANDO</h1>`,
-  });
-  res.send({ correo: "Correo enviado" });
-});
+// app.get("/mail", async (req, res) => {
+//   let result = await transport.sendMail({
+//     from: "Shadow Fit <shadowfit.info@gmail.com",
+//     to: "pablo.cantarin86@gmail.com",
+//     subject: "Correo prueba",
+//     html: `<h1>HOLA PROBANDO</h1>`,
+//   });
+//   res.send({ correo: "Correo enviado" });
+// });
 
 app.use("/", viewsRouter);
 app.use("/api/users", usersRouter);

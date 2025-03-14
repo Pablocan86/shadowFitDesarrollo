@@ -3,6 +3,8 @@ const { createHash, isValidPassword } = require("../utils.js");
 const { Buffer } = require("buffer");
 const userService = new UserManager();
 const { transport } = require("../config/mailConfig.js");
+const { getFiles, uploadFile } = require("../config/s3.js");
+const { crearPDF } = require("../midlewars/descargarPDF.js");
 
 exports.traeUsuarios = async (req, res) => {
   try {
@@ -167,13 +169,26 @@ exports.cargarProfesor = async (req, res) => {
 };
 
 exports.cargarRutina = async (req, res) => {
+  // app.post("/files", async (req, res) => {
+  //   const prueba = "<h1>hola</h1>";
+  //   const nombreArchivo = "pija2.pdf";
+  //   const result = await crearPDF(prueba, nombreArchivo);
+  //   await uploadFile(result, nombreArchivo);
+  //   res.send({ message: "subida exitos" });
+  // });
   let { uid } = req.params;
   let { rutina } = req.body;
   try {
     let alumno = await userService.traeUnUsuario(uid);
-    let profesor = await userService.traeUnProfesor(alumno.profesor);
+    rutina.nombreArchivo = `Rutina${alumno.rutinas.length + 1}-${
+      alumno.apellido
+    }.pdf`;
 
+    let profesor = await userService.traeUnProfesor(alumno.profesor);
+    const result = await crearPDF(rutina.vistaAlumno);
+    await uploadFile(result, rutina.nombreArchivo);
     await userService.cargarRutina(uid, rutina);
+
     await transport.sendMail({
       from: "Shadow Fit <shadowfit.info@gmail.com",
       to: alumno.email,
@@ -190,6 +205,11 @@ exports.cargarRutina = async (req, res) => {
   } catch (error) {
     console.log("Entro en el catch " + error);
   }
+};
+
+exports.files = async (req, res) => {
+  const result = await getFiles();
+  res.json(result.Contents);
 };
 
 exports.actualizarUsuario = async (req, res) => {

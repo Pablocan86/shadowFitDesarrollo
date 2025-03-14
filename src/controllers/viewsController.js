@@ -3,8 +3,7 @@ const puppeteer = require("puppeteer");
 const { crearRutina } = require("../midlewars/descargarPDF.js");
 const { transport } = require("../config/mailConfig.js");
 const userService = new UserManager();
-
-const BASE_URL = process.env.BASE_URL || "http://localhost:8080";
+const { getFileURL } = require("../config/s3.js");
 
 exports.home = async (req, res) => {
   if (!req.session.user) {
@@ -100,17 +99,22 @@ exports.rutinaAlumno = async (req, res) => {
   res.render("rutina", { layout: "rutinapdf", rutina: rutina });
 };
 
+exports.verRutina = async (req, res) => {
+  const result = await getFileURL(req.params.name);
+  // await decargar;
+  res.redirect(result);
+};
+
 exports.createPDF = async (req, res) => {
   let { number, uid } = req.params;
   let user = await userService.traeUnUsuario(uid);
   let rutinaHtml = user.rutinas[number].vistaAlumno;
-  const url = `${BASE_URL}/api/views/rutina/${number}/${uid}`;
 
   try {
     // let pdf = await crearRutina(rutinaHtml);
 
     let pdf = await crearRutina(
-      `${BASE_URL}/api/views/rutina/${number}/${uid}`
+      `http://localhost:8080/api/views/rutina/${number}/${uid}`
     );
 
     // let pdf = await crearRutina(url);
