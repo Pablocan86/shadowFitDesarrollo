@@ -44,7 +44,6 @@ async function crearPDF(contenido) {
   try {
     navegador = await puppeteer.launch({
       headless: true,
-      executablePath: "/usr/bin/google-chrome-stable",
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
   } catch (error) {
@@ -66,8 +65,8 @@ async function crearPDF(contenido) {
 
   // Cerramos el navegador
 
-  await navegador.close();
-  return pdfBuffer;
+  res.setHeader("Content-Type", "application/pdf");
+  res.send(pdfBuffer);
 }
 
 module.exports = {
