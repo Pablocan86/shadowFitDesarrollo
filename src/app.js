@@ -17,6 +17,7 @@ const bodyParser = require("body-parser");
 const { transport } = require("./config/mailConfig.js");
 const fileUpload = require("express-fileupload");
 const { uploadFile, getFiles, getFileURL } = require("./config/s3.js");
+const puppeteer = require("puppeteer");
 
 //PDF
 const { crearPDF } = require("./midlewars/descargarPDF.js");
@@ -112,5 +113,6 @@ app.use("/api/views", viewsRouter);
 app.use("/api/session", sessionRouter);
 
 // console.log("Ruta actual:", __dirname);
+console.log("Ruta del navegador:", puppeteer.executablePath());
 
 // app.listen(PORT, () => console.log(`Server runninng on PORT:${PORT}`));
