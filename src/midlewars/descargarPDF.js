@@ -43,8 +43,7 @@ async function crearPDF(contenido) {
   let navegador;
   try {
     navegador = await puppeteer.launch({
-      executablePath: "/usr/bin/chromium",
-      headless: "new",
+      headless: true,
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
   } catch (error) {
