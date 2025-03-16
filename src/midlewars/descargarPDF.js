@@ -40,7 +40,10 @@ async function crearRutina(contenido) {
 
 async function crearPDF(contenido, nombreArchivo) {
   // Abrir navegador
-  let navegador = await puppeteer.launch();
+  let navegador = await puppeteer.launch({
+    headless: "new",
+    args: ["--noo-sandobx", "--disable-setuid-sandobx"],
+  });
 
   // Creamos una nueva pestaña o pagina
   let pagina = await navegador.newPage();
