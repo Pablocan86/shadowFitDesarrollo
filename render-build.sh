@@ -10,7 +10,7 @@ npm install
 
 # Ensure the Puppeteer cache directory exist
 PUPPETEER_CACHE_DIR=/opt/render/.cache/puppeteer
-PROJECT_CACHE_DIR=/opt/render/project/src/.cache/puppeteer/chrome
+PROJECT_CACHE_DIR=/opt/render/project/src/src/.cache/puppeteer/chrome
 mkdir -p $PUPPETEER_CACHE_DIR
 mkdir -p $PROJECT_CACHE_DIR
 
