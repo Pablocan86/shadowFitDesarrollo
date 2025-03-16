@@ -9,6 +9,8 @@ npm install
 PUPPETEER_CACHE_DIR=/opt/render/.cache/puppeteer
 PROJECT_CACHE_DIR=/opt/render/project/src/src/.cache/puppeteer/chrome
 
+npx puppeteer browsers install chrome
+
 # Ensure directories exist
 if [[ ! -d $PROJECT_CACHE_DIR ]]; then
     echo "La ruta no existe, creando el directorio..."
