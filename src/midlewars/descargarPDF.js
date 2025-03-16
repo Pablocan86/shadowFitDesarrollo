@@ -1,6 +1,6 @@
 // const puppeteer = require("puppeteer");
 const { chromium } = require("playwright");
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-core");
 const UserManager = require("../dao/classes/users.dao.js");
 const { uploadFile } = require("../config/s3.js");
 
