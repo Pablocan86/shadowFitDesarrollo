@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "postinstall": "apt-get update && apt-get install -y chromium",
     "start": "node src/app.js",
     "test": "node --watch src/app.js",
     "dev": "nodemon src/app.js"
