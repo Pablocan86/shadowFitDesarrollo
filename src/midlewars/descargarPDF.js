@@ -1,6 +1,6 @@
 // const puppeteer = require("puppeteer");
 const { chromium } = require("playwright");
-const puppeteer = require("puppeteer-core");
+const puppeteer = require("puppeteer");
 const UserManager = require("../dao/classes/users.dao.js");
 const { uploadFile } = require("../config/s3.js");
 
@@ -40,11 +40,16 @@ async function crearRutina(contenido) {
 
 async function crearPDF(contenido) {
   // Abrir navegador
-  let navegador = await puppeteer.launch({
-    executablePath: "/usr/bin/chromium",
-    headless: "new",
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  });
+  let navegador;
+  try {
+    navegador = await puppeteer.launch({
+      executablePath: "/usr/bin/chromium",
+      headless: "new",
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    });
+  } catch (error) {
+    console.log("Could not create a browser intance => : ", error);
+  }
 
   // Creamos una nueva pestaña o pagina
   let pagina = await navegador.newPage();

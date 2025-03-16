@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node src/app.js",
     "test": "node --watch src/app.js",
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon src/app.js",
+    "postinstall": "npx puppeteer browsers install chrome"
   },
   "keywords": [],
   "author": "",
@@ -34,7 +35,6 @@
     "passport-local": "^1.0.0",
     "playwright": "^1.51.0",
     "puppeteer": "^24.4.0",
-    "puppeteer-core": "^24.4.0",
     "socket.io": "^4.8.0"
   }
 }
