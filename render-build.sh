@@ -9,18 +9,18 @@ npm install
 # npm run build
 
 # Ensure the Puppeteer cache directory exist
-PUPPETER_CACHE_DIR=/opt/render/.cache/puppeteer
-mkdir -p $PUPPETER_CACHE_DIR
+PUPPETEER_CACHE_DIR=/opt/render/.cache/puppeteer
+mkdir -p $PUPPETEER_CACHE_DIR
 
 # Install Puppeteer and download Chrome
 npx puppeteer browsers install chrome
 
 # Store/pull Puppeteer cache with build cache
-if [[! -d $PUPPETER_CACHE_DIR]]; then
+if [[! -d $PUPPETEER_CACHE_DIR]]; then
     echo  "...Copying Puppeteer Cache from Build Cache"
     # Copying from the actual path where Puppeteer stores is Chrome binary
-    cp -R /opt/render/project/src/.cache/puppeteer/chorme/$PUPPETER_CACHE_DIR
+    cp -R /opt/render/SHADOW_FIT_PROYECTO/src/.cache/puppeteer/chorme/ $PUPPETEER_CACHE_DIR
 else
     echo "...Storing Puppeteer Cache in Build Cache"
-    cp -R $PUPPETER_CACHE_DIR /opt/render/project/src/.cache/puppeteer/chrome/
+    cp -R $PUPPETEER_CACHE_DIR /opt/render/SHADOW_FIT_PROYECTO/src/.cache/puppeteer/chrome/
 fi
