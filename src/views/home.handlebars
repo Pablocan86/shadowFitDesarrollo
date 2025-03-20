@@ -1,63 +1,73 @@
 <header>
-  
-    <img src="https://i.ibb.co/4WsHDQX/Artboard-1-copy-8.png" alt="logo" />
+
+  <img src="https://i.ibb.co/4WsHDQX/Artboard-1-copy-8.png" alt="logo" />
   {{#if session}}
-     {{#if alumno}}
-          <p>¡Hola
-            {{alumno.nombre}}
-            {{alumno.apellido}}!</p>
-      {{/if}}    
-      {{#if profesor}}
-          <p>¡Hola
-            {{profesor.nombre}}
-            {{profesor.apellido}}!</p>     
-      {{/if}}
-      {{else}}
-      {{/if}}
+    {{#if alumno}}
+      <p>¡Hola
+        {{alumno.nombre}}
+        {{alumno.apellido}}!</p>
+    {{/if}}
+    {{#if profesor}}
+      <p>¡Hola
+        {{profesor.nombre}}
+        {{profesor.apellido}}!</p>
+    {{/if}}
+  {{else}}
+  {{/if}}
   <nav>
-    
+
     <ul class="roboto-list">
       <li>HOME</li>
-      {{!-- <li>NOVEDADES</li>
-      <li>RUTINAS</li> --}}
+      {{! <li>NOVEDADES</li>
+      <li>RUTINAS</li> }}
       {{#if session}}
         {{#if alumno}}
           <li>
             <a href="/api/users/perfil/{{alumno.id}}">Perfil</a></li>
         {{/if}}
         {{#if profesor}}
-          <li><a
-              href="/api/users/perfil/profesor/{{profesor.id}}"
-            >PERFIL </a></li>
+          <li><a href="/api/users/perfil/profesor/{{profesor.id}}">PERFIL
+            </a></li>
 
         {{/if}}
       {{else}}
-        
-          <li><a href="/api/views/login">ALUMNOS</a></li>
-          <li><a href="/api/views/loginprofesores">PROFESORES</a></li>
-        </div>
+
+        <li><a href="/api/views/login">ALUMNOS</a></li>
+        <li><a href="/api/views/loginprofesores">PROFESORES</a></li>
+
       {{/if}}
     </ul>
   </nav>
 </header>
 <main>
-<div class="divOpacity">
-  <h3>SUMATE AL MEJOR</h3>
-  <h3> EQUIPO DE ENTRENAMIENTO</h3>
-  <section class="infoServicios">
-    <div class="divCuadro">
-      <h4 class="h4Top">ENTRENAMIENTOS</h4><h4>PERSONALIZADOS</h4>
-      <img src="https://aiguajoc.com/wp-content/uploads/entrenador-personal-beneficios-aiguajoc.webp" alt="">
-    </div>
-    <div class="divCuadro">
-      <h4 class="h4Top">ENTRENAMIENTOS</h4> <h4>EN GRUPO</h4>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsA6SbE4IDHu25hiRmqynHW1HDFsJt2R5sBg&s" alt="">
-    </div>
-    <div class="divCuadro">
-      <h4 class="h4Top">SEGUIMIENTOS</h4> <h4>A DISTANCIA</h4>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeOPbmL2edHabDNvvDdrQdXWgtzOClug5k_A&s" alt="">
-    </div>
-  </section>
-</div>
+  <div class="divOpacity">
+    <h3>SUMATE AL MEJOR</h3>
+    <h3> EQUIPO DE ENTRENAMIENTO</h3>
+    <section class="infoServicios">
+      <div class="divCuadro">
+        <h4 class="h4Top">ENTRENAMIENTOS</h4><h4>PERSONALIZADOS</h4>
+        <img
+          src="https://aiguajoc.com/wp-content/uploads/entrenador-personal-beneficios-aiguajoc.webp"
+          alt=""
+        />
+      </div>
+      <div class="divCuadro">
+        <h4 class="h4Top">ENTRENAMIENTOS</h4>
+        <h4>EN GRUPO</h4>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsA6SbE4IDHu25hiRmqynHW1HDFsJt2R5sBg&s"
+          alt=""
+        />
+      </div>
+      <div class="divCuadro">
+        <h4 class="h4Top">SEGUIMIENTOS</h4>
+        <h4>A DISTANCIA</h4>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeOPbmL2edHabDNvvDdrQdXWgtzOClug5k_A&s"
+          alt=""
+        />
+      </div>
+    </section>
+  </div>
 </main>
 <footer><h6>&copy; Cantarin Pablo</h6></footer>
