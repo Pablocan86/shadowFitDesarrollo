@@ -4,8 +4,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node src/app.js",
-    "test": "node --watch src/app.js",
-    "dev": "nodemon src/app.js",
+    "dev": "node --watch src/app.js",
+    "test": "nodemon src/app.js",
     "postinstall": "npx puppeteer browsers install chrome"
   },
   "keywords": [],
