@@ -16,33 +16,33 @@ async function crearRutina(contenido) {
     return;
   }
   // Abrir navegador
-  let navegador = await puppeteer.launch();
+  let browser = await puppeteer.launch();
 
   // Creamos una nueva pestaña o pagina
-  let pagina = await navegador.newPage();
+  let page = await browser.newPage();
   // Abrir al url dentro de esta pagina
-  await pagina.goto(contenido, { waitUntil: "networkidle2" });
+  await page.goto(contenido, { waitUntil: "networkidle2" });
   // await pagina.setContent(contenido, { waitUntil: "domcontentloaded" });
   // Mostramos los estilos en la nueva página
 
   // let pdf = await pagina.pdf();
   // Generar el PDF y guardarlo en el disco
-  let pdfBuffer = await pagina.pdf({
+  let pdfBuffer = await page.pdf({
     format: "A4",
     printBackground: true,
   });
 
   // Cerramos el navegador
 
-  await navegador.close();
+  await browser.close();
   return pdfBuffer;
 }
 
 async function crearPDF(contenido) {
   // Abrir navegador
-  let navegador;
+  let browser;
   try {
-    navegador = await puppeteer.launch({
+    browser = await puppeteer.launch({
       headless: true,
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
@@ -51,22 +51,22 @@ async function crearPDF(contenido) {
   }
 
   // Creamos una nueva pestaña o pagina
-  let pagina = await navegador.newPage();
+  let page = await browser.newPage();
   // Abrir al url dentro de esta pagina
 
-  await pagina.setContent(contenido, { waitUntil: "domcontentloaded" });
+  await page.setContent(contenido, { waitUntil: "domcontentloaded" });
   // Mostramos los estilos en la nueva página
 
   // let pdf = await pagina.pdf();
   // Generar el PDF y guardarlo en el disco
-  let pdfBuffer = await pagina.pdf({
+  let pdfBuffer = await page.pdf({
     printBackground: true,
   });
 
   // Cerramos el navegador
 
-  res.setHeader("Content-Type", "application/pdf");
-  res.send(pdfBuffer);
+  await browser.close();
+  return pdfBuffer;
 }
 
 module.exports = {
