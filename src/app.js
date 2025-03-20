@@ -112,7 +112,4 @@ app.use("/api/users", usersRouter);
 app.use("/api/views", viewsRouter);
 app.use("/api/session", sessionRouter);
 
-// console.log("Ruta actual:", __dirname);
-console.log("Ruta del navegador:", puppeteer.executablePath());
-
 // app.listen(PORT, () => console.log(`Server runninng on PORT:${PORT}`));

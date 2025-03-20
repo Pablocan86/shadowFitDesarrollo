@@ -2,7 +2,6 @@
 <main id="usuario_id" data-id="{{usuario._id}}">
 <div class="datos1">
   <div>
-   
       {{#if usuario.foto_perfil}}
       <img class="imagenPerfil" src="/api/users/ver-foto-perfil-alumno/{{usuario._id}}" alt="" >
       {{else}}
@@ -14,15 +13,13 @@
       {{/if}}
   </div>
   <div class="datosEspecificos">
-  <p>Nombre: {{usuario.nombre}}</p>
-  <p>Apellido: {{usuario.apellido}}</p>
-  <p>Correo: {{usuario.email}}</p>
-  <a class="cambiarContrasena" href="/api/views/cambiarcontrasena/{{usuario._id}}">Cambiar contraseña</a>
-    </div>
+    <p>Nombre: {{usuario.nombre}}</p>
+    <p>Apellido: {{usuario.apellido}}</p>
+    <p>Correo: {{usuario.email}}</p>
+    <a class="cambiarContrasena" href="/api/views/cambiarcontrasena/{{usuario._id}}">Cambiar contraseña</a>
   </div>
-  
 </div>
-<div class="profesorYRutinas">
+<section class="profesorYRutinas">
   <div class="profesor">
 {{#if isProfesor}}
   <h2>PROFESOR</h2>
@@ -50,8 +47,9 @@
   </select>
 
   <form action=""><button id="select_profesor" type="submit">Guardar Profesor</button></form>
+  </div>
 {{/if}}
-</div>
+</section>
 
 <section class="rutinas">
   <h2>RUTINAS</h2>
@@ -64,11 +62,9 @@ picture_as_pdf
 </span> </a></li>
 {{/each}}
 </ul>
-</section>
-</div>
 <form  action="/api/session/logout" method="post"><button class="logout"type="submit">Cerrar
-  
-    cesión</button></form>
+cesión</button></form>
+</section>
 </main>
 <footer>Todos los derechos reservados &copy; Cantarin Pablo</footer>
 <script src="/js/perfilAlumno.js"></script>

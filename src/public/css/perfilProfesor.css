@@ -5,7 +5,7 @@
 }
 
 body {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -42,7 +42,6 @@ main {
   flex-direction: column;
   border-radius: 5px;
   box-shadow: 0px 0px 10px black;
-  margin: auto auto;
 }
 
 .imagenPerfil {
@@ -55,6 +54,7 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
@@ -139,8 +139,10 @@ main {
   position: relative;
 }
 .infoAlumno {
-  width: 20px;
-  height: 20px;
+  background-color: rgb(167, 11, 11);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
 }
 .info-cuadro {
   position: absolute;
@@ -155,8 +157,10 @@ main {
 }
 
 .crearRutina {
-  width: 20px;
-  height: 20px;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 .info-rutina {
@@ -215,3 +219,5 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
+/* Responsive */
