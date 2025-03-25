@@ -56,7 +56,17 @@ async function crearPDF(contenido) {
 
   await page.setContent(contenido, { waitUntil: "domcontentloaded" });
   // Mostramos los estilos en la nueva página
-
+  await page.evaluate(async () => {
+    const images = Array.from(document.images);
+    await Promise.all(
+      images.map((img) => {
+        if (img.complete) return;
+        return new Promise((resolve) => {
+          img.onload = img.onerror = resolve;
+        });
+      })
+    );
+  });
   // let pdf = await pagina.pdf();
   // Generar el PDF y guardarlo en el disco
   let pdfBuffer = await page.pdf({

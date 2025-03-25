@@ -37,7 +37,32 @@
   <section class="alumnos">
     <h2>ALUMNOS</h2>
     {{#if alumnos}}
-      <ul class="listaAlumnos">
+    <div class="listaAlumnosDiv">
+    {{#each alumnos}}
+    <div class="divAlumno">
+      <img class="imgPerfilAlumno" src="/api/users/ver-foto-perfil-alumno/{{this._id}}" alt="">
+      <p>{{this.nombre}} {{this.apellido}}</p>
+      <div>
+       <a class="contenedorImagen" href="/api/users/panelAlumno/{{this._id}}">
+          <img class="infoAlumno" src="https://www.svgrepo.com/show/423418/info.svg" alt=""/>
+          <div class="info-cuadro" id="infoCuadro">
+                Panel Alumno
+              </div></a>
+            <a
+              class="contenedorImagen"
+              href="/api/views/confeccionrutinas/{{this._id}}"
+            ><img
+                class="crearRutina"
+                src="https://www.svgrepo.com/show/438272/add-document-round.svg"
+                alt=""
+              /><div class="info-rutina" id="crea_Rutina">
+                Crear rutina
+              </div></a>
+      </div>
+    </div>
+    {{/each}}
+    </div>
+      {{!-- <ul class="listaAlumnos">
 
         {{#each alumnos}}
           <li class="alumno"><p>{{this.nombre}}
@@ -64,7 +89,7 @@
               </div></a>
           </li>
         {{/each}}
-      </ul>
+      </ul> --}}
     {{else}}
       <p class="sinAlumnos"> 😴 Aun no tiene alumnos 😴</p>
 

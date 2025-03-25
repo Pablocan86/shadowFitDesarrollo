@@ -1,7 +1,7 @@
 <header>
 
   <img src="https://i.ibb.co/4WsHDQX/Artboard-1-copy-8.png" alt="logo" />
-  {{#if session}}
+  {{!-- {{#if session}}
     {{#if alumno}}
       <p>¡Hola
         {{alumno.nombre}}
@@ -13,9 +13,9 @@
         {{profesor.apellido}}!</p>
     {{/if}}
   {{else}}
-  {{/if}}
+  {{/if}} --}}
   <nav>
-
+    {{!-- 
     <ul class="roboto-list">
       <li>HOME</li>
       {{! <li>NOVEDADES</li>
@@ -36,15 +36,67 @@
         <li><a href="/api/views/loginprofesores">PROFESORES</a></li>
 
       {{/if}}
-    </ul>
+    </ul> --}}
   </nav>
 </header>
 <main>
+
   <div class="divOpacity">
-    <h3>SUMATE AL MEJOR</h3>
-    <h3> EQUIPO DE ENTRENAMIENTO</h3>
-    <section class="infoServicios">
-      <div class="divCuadro">
+    {{#if session}}
+      {{#if alumno}}
+        <section class="homeLogueado">
+          <h3>¡HOLA, {{alumno.apellido}} {{alumno.nombre}}!</h3>
+          <a class="divCuadro" href="/api/users/perfil/{{alumno.id}}">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt8GkVX7HB2NMiwXELav_6K7Sen_3ddFvDzw&s"
+              alt=""
+            />
+            <h4>PERFIL</h4>
+          </a>
+        </section>
+      {{/if}}
+      {{#if profesor}}
+        <section class="homeLogueado">
+          <h3>¡HOLA, {{profesor.apellido}} {{profesor.nombre}}!</h3>
+          <a
+            class="divCuadro"
+            href="/api/users/perfil/profesor/{{profesor.id}}"
+          >
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt8GkVX7HB2NMiwXELav_6K7Sen_3ddFvDzw&s"
+              alt=""
+            />
+            <h4>ESPACIO DE TRABAJO</h4>
+          </a>
+        </section>
+      {{/if}}
+    {{else}}
+      <h3>SUMATE AL MEJOR</h3>
+      <h3> EQUIPO DE ENTRENAMIENTO</h3>
+      <section class="infoServicios">
+        <a class="divCuadro" href="/api/views/login">
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/007/169/895/non_2x/gym-training-fitness-exercises-transparent-icons-illustration-vector.jpg"
+            alt=""
+          />
+          <h4>ALUMNOS</h4>
+        </a>
+        <a class="divCuadro" href="/api/views/loginprofesores">
+          <img
+            src="https://img.freepik.com/fotos-premium/icono-gimnasio-entrenador-fitness-icono-vectorial-ilustracion-tipo-icono-salud-manivela-manzana-concepto-estilo-dibujos-animados-plano-aislado-blanco-adecuado-pagina-aterrizaje-web-banner-sticker-fondo_839035-1768810.jpg"
+            alt=""
+          />
+          <h4>PROFESORES</h4>
+        </a>
+        <a class="divCuadro" href="">
+          <img
+            src="https://img.freepik.com/vector-premium/simbolo-llamada-telefono-icono-boton-circular-negro-ilustracion-vector-aislado_34480-834.jpg"
+            alt=""
+          />
+          <h4>CONTACTO</h4>
+        </a>
+
+        {{! <div class="divCuadro">
         <h4 class="h4Top">ENTRENAMIENTOS</h4><h4>PERSONALIZADOS</h4>
         <img
           src="https://aiguajoc.com/wp-content/uploads/entrenador-personal-beneficios-aiguajoc.webp"
@@ -66,8 +118,10 @@
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeOPbmL2edHabDNvvDdrQdXWgtzOClug5k_A&s"
           alt=""
         />
-      </div>
-    </section>
+      </div> }}
+      </section>
+    {{/if}}
+
   </div>
 </main>
 <footer><h6>&copy; Cantarin Pablo</h6></footer>
