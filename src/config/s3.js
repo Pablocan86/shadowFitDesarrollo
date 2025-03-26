@@ -21,14 +21,14 @@ const client = new S3Client({
   },
 });
 
-async function uploadFile(fileBuffer, fileName) {
+async function uploadFile(fileBuffer, fileName, mimeType) {
   // const stream = fs.createReadStream(file.tempFilePath);
   // const stream = fs.createReadStream(file.tempFilePath);
   const uploadParams = {
     Bucket: AWS_BUCKET_NAME,
     Key: fileName,
     Body: fileBuffer,
-    ContentType: "application/pdf",
+    ContentType: mimeType,
   };
   try {
     const command = new PutObjectCommand(uploadParams);

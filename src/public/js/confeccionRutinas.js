@@ -32,6 +32,22 @@ const agregarEjercicio = document.querySelector("#agregar_ejercicio");
 const observaciones = document.querySelector("#observaciones");
 const profesor = document.querySelector("#nombreProfesor");
 const imgPerfil = document.querySelector("#imagenID");
+const uid = document.querySelector("#nombreAlumno");
+const idAlumno = uid.getAttribute("data-id");
+
+fetch(`/api/users/ver-foto-perfil-alumno/${idAlumno}`)
+  .then((response) => response.json())
+  .then((data) => {
+    // La URL está en data.url
+    const imageUrl = data.url;
+
+    // Actualizar el atributo src de la imagen
+    const imgElement = document.getElementById("imagenID");
+    imgElement.src = imageUrl;
+  })
+  .catch((error) => {
+    console.error("Error al obtener la imagen de perfil:", error);
+  });
 
 let fechaRutina;
 //CLASE MOLDE PARA EJERCICIOS
@@ -1018,7 +1034,7 @@ document
       </section>
      
       </main>
-      <footer><a href="${protocol}//${host}/api/users/perfil/profesor/${idProfesor}">Ir a perfil</a></footer>
+      <footer><a href="/api/users/perfil/profesor/${idProfesor}">Ir a perfil</a></footer>
       <script src="/js/rutina.js"></script>`;
     // </body>
     // </html>`;
@@ -1084,7 +1100,6 @@ borrarRutnia.addEventListener("click", () => {
 // Guardado de rutina provisorio
 
 const guardarRutina = document.querySelector("#guardarRutina");
-const uid = document.querySelector("#nombreAlumno");
 
 // guardarRutina.addEventListener("click", async (e) => {
 //   e.preventDefault();

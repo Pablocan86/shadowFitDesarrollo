@@ -31,12 +31,12 @@ const httpSever = app.listen(port, "0.0.0.0", () =>
   console.log(`Listeninig on PORT ${port}`)
 );
 
-app.use(
-  fileUpload({
-    useTempFiles: true,
-    tempFileDir: "./uploads",
-  })
-);
+// app.use(
+//   fileUpload({
+//     useTempFiles: true,
+//     tempFileDir: "./uploads",
+//   })
+// );
 
 // app.get("/files", async (req, res) => {
 //   const result = await getFiles();

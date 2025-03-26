@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const userCollection = "usuarios";
 
 const userSchema = new mongoose.Schema({
-  nombre: String,
-  apellido: String,
+  nombre: { type: String },
+  apellido: { type: String },
   email: {
     type: String,
     unique: true,
@@ -13,12 +13,12 @@ const userSchema = new mongoose.Schema({
     type: Number,
     unique: true,
   },
-  password: String,
-  cumpleanos: String,
-  fecha_registro: String,
+  password: { type: String },
+  cumpleanos: { type: String },
+  fecha_registro: { type: String },
   foto_perfil: {
-    data: Buffer,
-    contentType: String,
+    type: String,
+    default: "",
   },
   profesor: { type: String, default: "" },
   rutinas: {
@@ -28,6 +28,24 @@ const userSchema = new mongoose.Schema({
         nombreArchivo: { type: String },
         vistaAlumno: { type: String },
         vistaProfesor: { type: String },
+      },
+    ],
+    default: [],
+  },
+  dietas: {
+    type: [
+      {
+        fecha: { type: String },
+        nombreArchivo: { type: String },
+      },
+    ],
+    default: [],
+  },
+  progresos: {
+    type: [
+      {
+        fecha: { type: String },
+        imagen: { type: String },
       },
     ],
     default: [],

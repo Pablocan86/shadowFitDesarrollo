@@ -14,8 +14,8 @@ const profesorSchema = new mongoose.Schema({
     unique: true,
   },
   foto_perfil: {
-    data: Buffer,
-    contentType: String,
+    type: String,
+    default: "",
   },
   password: String,
   cumpleanos: String,

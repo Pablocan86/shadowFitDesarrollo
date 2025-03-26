@@ -3,7 +3,7 @@
 <div class="datos1">
   <div>
       {{#if usuario.foto_perfil}}
-      <img class="imagenPerfil" src="/api/users/ver-foto-perfil-alumno/{{usuario._id}}" alt="" >
+      <img id="imagenDePerfil" class="imagenPerfil" src="" alt="" >
       {{else}}
       <form action="/api/users/cargar-foto-perfil-alumno/{{usuario._id}}" method="post" enctype="multipart/form-data">
       <label class="inputFoto" for="fotoPerfil">Elegir foto</label>
@@ -23,8 +23,8 @@
   <div class="profesor">
 {{#if isProfesor}}
   <h2>PROFESOR</h2>
-  <div class="datosProfesor">
-    <img src="/api/users/ver-foto-perfil-profesor/{{profesorDesignado._id}}" alt="">
+  <div id="id_Profesor" data-id="{{profesorDesignado._id}}" class="datosProfesor">
+    <img id="imgProfesor" src="" alt="">
     <div>
       <p>Nombre: {{profesorDesignado.nombre}}</p>
       <p>Apellido: {{profesorDesignado.apellido}}</p>
@@ -33,7 +33,7 @@
     </div>
   </div>
 {{else}}
-  <h2>Selecciona tu profesor</h2>
+  <h2>SELECCIÓN PROFESOR</h2>
   <select name="" id="profesores">
 
     {{#each profesores}}

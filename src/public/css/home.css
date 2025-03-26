@@ -10,7 +10,6 @@ body {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 header {
@@ -73,13 +72,12 @@ main {
   flex-direction: column;
   background-image: url("https://s0.smartresize.com/wallpaper/194/187/HD-wallpaper-gym-dumbbells-inventory-mirror-lights.jpg");
   background-size: cover;
-  min-height: 100vh;
+
   width: 100%;
   padding-bottom: 50px;
 }
 .divOpacity {
   width: 100%;
-  min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.651);
 }
 

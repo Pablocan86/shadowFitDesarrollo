@@ -4,6 +4,23 @@ const infoAlumno = document.querySelectorAll(".infoAlumno");
 const infoCuadro = document.getElementById("infoCuadro");
 const creaRutina = document.querySelectorAll(".crearRutina");
 const infoRutina = document.getElementById("crea_Rutina");
+const uid = document.getElementById("usuario_id");
+const listaAlumnos = document.querySelector(".listaAlumnosDiv");
+const id = uid.getAttribute("data-id");
+
+fetch(`/api/users/ver-foto-perfil-profesor/${id}`)
+  .then((response) => response.json())
+  .then((data) => {
+    // La URL está en data.url
+    const imageUrl = data.url;
+
+    // Actualizar el atributo src de la imagen
+    const imgElement = document.getElementById("imagenDePerfil");
+    imgElement.src = imageUrl;
+  })
+  .catch((error) => {
+    console.error("Error al obtener la imagen de perfil:", error);
+  });
 
 if (archivo) {
   archivo.addEventListener("change", function (e) {
@@ -39,3 +56,21 @@ if (creaRutina) {
     });
   });
 }
+
+Array.from(document.querySelectorAll(".divAlumno")).forEach((element) => {
+  const id = element.id;
+  fetch(`/api/users/ver-foto-perfil-alumno/${id}`)
+    .then((response) => response.json())
+    .then((data) => {
+      // La URL está en data.url
+      const imageUrl = data.url;
+
+      // Actualizar el atributo src de la imagen
+      const imgElement = document.getElementById(`imgPerfil-${id}`);
+
+      imgElement.src = imageUrl;
+    })
+    .catch((error) => {
+      console.error("Error al obtener la imagen de perfil:", error);
+    });
+});

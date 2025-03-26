@@ -102,6 +102,16 @@ main {
   background-color: #007bff;
 }
 
+#profesores {
+  background-color: black;
+  height: 2rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 5px;
+}
+
 .datosProfesor {
   width: 100%;
   display: flex;

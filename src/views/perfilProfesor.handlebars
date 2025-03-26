@@ -1,10 +1,11 @@
 <header><h1>PERFIL PROFESOR</h1></header>
-<main>
+<main id="usuario_id" data-id="{{profesor._id}}">
   <div class="profesorCuadro">
     <div class="datos1">
 
       {{#if profesor.foto_perfil}}
         <img
+          id="imagenDePerfil"
           class="imagenPerfil"
           src="/api/users/ver-foto-perfil-profesor/{{profesor._id}}"
           alt=""
@@ -39,25 +40,16 @@
     {{#if alumnos}}
     <div class="listaAlumnosDiv">
     {{#each alumnos}}
-    <div class="divAlumno">
-      <img class="imgPerfilAlumno" src="/api/users/ver-foto-perfil-alumno/{{this._id}}" alt="">
+    <div id="{{this._id}}" class="divAlumno">
+      <img id="imgPerfil-{{this._id}}" class="imgPerfilAlumno" src="" alt="">
       <p>{{this.nombre}} {{this.apellido}}</p>
       <div>
-       <a class="contenedorImagen" href="/api/users/panelAlumno/{{this._id}}">
-          <img class="infoAlumno" src="https://www.svgrepo.com/show/423418/info.svg" alt=""/>
-          <div class="info-cuadro" id="infoCuadro">
-                Panel Alumno
-              </div></a>
+       <a class="info" href="/api/users/panelAlumno/{{this._id}}">
+          Info</a>
             <a
-              class="contenedorImagen"
+              class="crearRutina"
               href="/api/views/confeccionrutinas/{{this._id}}"
-            ><img
-                class="crearRutina"
-                src="https://www.svgrepo.com/show/438272/add-document-round.svg"
-                alt=""
-              /><div class="info-rutina" id="crea_Rutina">
-                Crear rutina
-              </div></a>
+            >Crear rutina</a>
       </div>
     </div>
     {{/each}}

@@ -33,6 +33,7 @@ router.post(
   upload.single("fotoPerfil"),
   userController.cargarFotoPerfilAlumno
 );
+
 router.post(
   "/cargar-foto-perfil-profesor/:uid",
   upload.single("fotoPerfil"),

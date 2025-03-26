@@ -3,7 +3,7 @@ const { createHash, isValidPassword } = require("../utils.js");
 const { Buffer } = require("buffer");
 const userService = new UserManager();
 const { transport } = require("../config/mailConfig.js");
-const { getFiles, uploadFile } = require("../config/s3.js");
+const { getFiles, uploadFile, getFileURL } = require("../config/s3.js");
 const { crearPDF } = require("../midlewars/descargarPDF.js");
 
 exports.traeUsuarios = async (req, res) => {
@@ -186,7 +186,7 @@ exports.cargarRutina = async (req, res) => {
 
     let profesor = await userService.traeUnProfesor(alumno.profesor);
     const result = await crearPDF(rutina.vistaAlumno);
-    await uploadFile(result, rutina.nombreArchivo);
+    await uploadFile(result, rutina.nombreArchivo, "application/pdf");
     await userService.cargarRutina(uid, rutina);
 
     await transport.sendMail({
@@ -264,12 +264,11 @@ exports.cargarFotoPerfilAlumno = async (req, res) => {
   try {
     const user = await userService.traeUnUsuario(uid);
     if (!user) return res.status(404).send("Usuario no encontrado");
+    if (!req.file) return res.status(400).send("No se recibió ninguna imagen.");
     nuevaPropiedad = {
-      data: req.file.buffer,
-      contentType: req.file.mimetype,
+      foto_perfil: req.file.key,
     };
-
-    await userService.actualizaPropiedad(uid, { foto_perfil: nuevaPropiedad });
+    await userService.actualizaPropiedad(uid, nuevaPropiedad);
     res.redirect(`/api/users/perfil/${user._id}`);
   } catch (err) {
     res.status(500).send(err.message);
@@ -280,14 +279,12 @@ exports.cargarFotoPerfilProfesor = async (req, res) => {
   try {
     const user = await userService.traeUnProfesor(uid);
     if (!user) return res.status(404).send("Usuario no encontrado");
+    if (!req.file) return res.status(400).send("No se recibió ninguna imagen.");
     nuevaPropiedad = {
-      data: req.file.buffer,
-      contentType: req.file.mimetype,
+      foto_perfil: req.file.key,
     };
 
-    await userService.actualizaPropiedadProfesor(uid, {
-      foto_perfil: nuevaPropiedad,
-    });
+    await userService.actualizaPropiedadProfesor(uid, nuevaPropiedad);
     res.redirect(`/api/users/perfil/profesor/${user._id}`);
   } catch (err) {
     res.status(500).send(err.message);
@@ -304,20 +301,14 @@ exports.traerImagenPerfil = async (req, res) => {
     }
 
     // Verificar si el usuario tiene una foto de perfil
-    if (!user.foto_perfil || !user.foto_perfil.data) {
+    if (!user.foto_perfil) {
       return res.status(404).send("No hay foto de perfil disponible.");
     }
 
-    const imagenBuffer = Buffer.from(
-      user.foto_perfil.data.buffer || user.foto_perfil.data,
-      "base64"
-    );
+    const fileName = user.foto_perfil;
+    const imagenURL = await getFileURL(fileName);
 
-    // Configurar el tipo de contenido correcto según el MIME tipo
-    res.set("Content-Type", user.foto_perfil.contentType);
-
-    // Enviar la imagen (buffer) como respuesta
-    res.send(imagenBuffer);
+    res.json({ url: imagenURL });
   } catch (err) {
     res.status(500).send(err.message);
   }
@@ -332,20 +323,14 @@ exports.traerImagenPerfilProfesor = async (req, res) => {
     }
 
     // Verificar si el usuario tiene una foto de perfil
-    if (!user.foto_perfil || !user.foto_perfil.data) {
+    if (!user.foto_perfil) {
       return res.status(404).send("No hay foto de perfil disponible.");
     }
 
-    const imagenBuffer = Buffer.from(
-      user.foto_perfil.data.buffer || user.foto_perfil.data,
-      "base64"
-    );
+    const fileName = user.foto_perfil;
+    const imagenURL = await getFileURL(fileName);
 
-    // Configurar el tipo de contenido correcto según el MIME tipo
-    res.set("Content-Type", user.foto_perfil.contentType);
-
-    // Enviar la imagen (buffer) como respuesta
-    res.send(imagenBuffer);
+    res.json({ url: imagenURL });
   } catch (err) {
     res.status(500).send(err.message);
   }
