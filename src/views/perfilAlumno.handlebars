@@ -62,9 +62,41 @@ picture_as_pdf
 </span> </a></li>
 {{/each}}
 </ul>
+</section>
+<section class="dietas">
+  <h2>DIETAS</h2>
+  {{#if usuario.dietas.length}}
+  <ul class="lista">
+  {{#each usuario.dietas}}
+
+{{!-- <li><p>Fecha: {{this.fecha}}</p> <a href="/api/views/createPDF/{{@index}}/{{../usuario._id}}" target="_blank"><span class="material-symbols-outlined">
+<li><p>Fecha: {{this.fecha}}</p> <a href="/api/views/verrutina/{{this.nombreArchivo}}/{{../usuario._id}}" target="_blank"><span class="material-symbols-outlined">
+picture_as_pdf
+</span> </a></li> --}}
+{{/each}}
+</ul>
+{{else}}
+<h3>NO HAY GUIA DE 🥗🥙🥪🌮, ESTAMOS TRABAJANDO EN ELLO </h3>
+{{/if}}
+</section>
+<section class="dietas">
+  <h2>PROGRESOS</h2>
+  {{#if usuario.progresos.length}}
+  <ul class="lista">
+  {{#each usuario.progresos}}
+
+{{!-- <li><p>Fecha: {{this.fecha}}</p> <a href="/api/views/createPDF/{{@index}}/{{../usuario._id}}" target="_blank"><span class="material-symbols-outlined">
+<li><p>Fecha: {{this.fecha}}</p> <a href="/api/views/verrutina/{{this.nombreArchivo}}/{{../usuario._id}}" target="_blank"><span class="material-symbols-outlined">
+picture_as_pdf
+</span> </a></li> --}}
+{{/each}}
+</ul>
+{{else}}
+<h3>NO HAS SUBIDO TUS PROGRESOS AUN </h3>
+{{/if}}
+</section>
 <form  action="/api/session/logout" method="post"><button class="logout"type="submit">Cerrar
 cesión</button></form>
-</section>
 </main>
 <footer>Todos los derechos reservados &copy; Cantarin Pablo</footer>
 <script src="/js/perfilAlumno.js"></script>

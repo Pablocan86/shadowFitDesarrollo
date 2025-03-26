@@ -44,9 +44,19 @@
   </section>
   <section>
     <h2>DIETAS</h2>
+    {{#if alumno.dietas.length}}
+    <h4>hay dietas</h4>
+    {{else}}
+    <h4>Aun no se han cargado dietas</h4>
+    {{/if}}
   </section>
   <section>
     <h2>PROGRESOS</h2>
+    {{#if alumno.progresos.length}}
+    <h4>hay progresos</h4>
+    {{else}}
+    <h4>Aun no se han cargado progresos</h4>
+    {{/if}}
   </section>
 
   <a class="volver" href="/api/users/perfil/profesor/{{alumno.profesor}}">Volver al perfil</a>
