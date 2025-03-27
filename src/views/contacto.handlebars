@@ -1,0 +1,28 @@
+<header><h1>FORMULARIO CONTACTO</h1></header>
+<main>
+  <form action="/api/views/contactoinfo" method="POST">
+  {{#if message}}
+  <h2>Gracias por escribirnos</h2>
+  <h3>{{message}}</h3>
+  <img src="https://static.vecteezy.com/system/resources/thumbnails/011/674/829/small/3d-young-man-with-fitness-equipment-fitness-gym-concept-kettle-ball-gym-dumbbell-fitness-mat-bottle-on-purple-background-muscle-exercise-bodybuilding-3d-rendering-png.png" alt="">
+
+  {{else}}
+    <h4>Envíanos tu consulta</h4>
+    <label for="nombre">Nombres:
+    </label>
+    <input type="text" name="nombre" id="nombre" />
+    <label for="apellido">Apellido:
+    </label>
+    <input type="text" name="apellido" id="apellido" />
+    <label for="email">Escribe tu correo:
+    </label>
+    <input type="email" name="email" id="email" />
+    <label for="consulta">Escribe tu consulta:
+    </label>
+    <textarea name="consulta" id="consulta"></textarea>
+    <button type="submit">Enviar</button>
+    {{/if}}
+  </form>
+  <a class="volver" href="/api/views/paginaprincipal"><<< Ir a página principal</a>
+</main>
+<footer>Todos los derechos reservados @ Cantarin Pablo</footer>

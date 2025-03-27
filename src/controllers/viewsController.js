@@ -139,6 +139,34 @@ exports.cambioContrasena = async (req, res) => {
   });
 };
 
+exports.formularioConsultas = async (req, res) => {
+  const { nombre, apellido, email, consulta } = req.body;
+  let date = new Date();
+  const nuevaConsulta = {
+    fecha: date,
+    nombre: nombre,
+    apellido: apellido,
+    email: email,
+    consulta: consulta,
+  };
+  await transport.sendMail({
+    from: "Shadow Fit <shadowfit.info@gmail.com",
+    to: "shadowfit.info@gmail.com",
+    subject: `Nueva Consulta`,
+    html: `
+    <h2 style="text-align: center;">NUEVA CONSULTA</h2>
+    <p>Consultante: ${nuevaConsulta.apellido} ${nuevaConsulta.nombre}</p>
+    <p>Email: ${nuevaConsulta.email}</p>
+    <p>Consulta: ${nuevaConsulta.consulta}</p>
+    <p>Enviada: ${nuevaConsulta.fecha}</p>`,
+  });
+  res.render("contacto", {
+    style: "contacto.css",
+    title: "Gracias por escribirnos",
+    message: "En breves nos contactaremos",
+  });
+};
+
 // exports.createPDF = async (req, res) => {
 //   const { html } = req.body; // HTML enviado desde el cliente
 

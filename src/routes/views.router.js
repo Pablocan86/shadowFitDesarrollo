@@ -59,4 +59,13 @@ router.get(
   viewsController.cambioContrasena
 );
 
+router.get("/contacto", (req, res) => {
+  res.render("contacto", {
+    style: "contacto.css",
+    title: "Formulario contacto",
+  });
+});
+
+router.post("/contactoinfo", viewsController.formularioConsultas);
+
 module.exports = router;
