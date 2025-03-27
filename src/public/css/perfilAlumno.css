@@ -187,19 +187,20 @@ main {
 .lista {
   display: flex;
   width: 100%;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 10px;
 }
 
 .lista li {
-  width: 99%;
+  width: 200px;
+  height: 200px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 0px 1px 0px 1px;
   padding: 5px;
   border-radius: 5px;
@@ -207,10 +208,9 @@ main {
   box-shadow: 0px 0px 5px white;
 }
 
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 30;
-  color: black;
-  font-size: 3rem;
+.lista li p {
+  text-align: center;
+  font-weight: bold;
 }
 
 .lista li a {
@@ -218,8 +218,57 @@ main {
 }
 
 .lista li a img {
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
+}
+
+#progresos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#formProgresos {
+  background-color: #33312f;
+  width: 99%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#fechaProgreso {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1.5rem;
+  border-radius: 5px;
+}
+
+#divInputs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+#divInputs input {
+  display: none;
+}
+
+#divInputs label {
+  background-color: black;
+  color: white;
+  width: auto;
+  padding: 5px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#divInputs label:hover {
+  background-color: gray;
 }
 
 .logout {
@@ -255,5 +304,14 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 5px;
+  }
+
+  .lista li {
+    width: 100px;
+    height: 100px;
+  }
+
+  .lista li p {
+    display: none;
   }
 }

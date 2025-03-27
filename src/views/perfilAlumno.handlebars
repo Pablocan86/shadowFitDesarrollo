@@ -13,9 +13,9 @@
       {{/if}}
   </div>
   <div class="datosEspecificos">
-    <p>Nombre: {{usuario.nombre}}</p>
-    <p>Apellido: {{usuario.apellido}}</p>
-    <p>Correo: {{usuario.email}}</p>
+    <p>{{usuario.nombre}}</p>
+    <p>{{usuario.apellido}}</p>
+    <p>{{usuario.email}}</p>
     <a class="cambiarContrasena" href="/api/views/cambiarcontrasena/{{usuario._id}}">Cambiar contraseña</a>
   </div>
 </div>
@@ -26,10 +26,10 @@
   <div id="id_Profesor" data-id="{{profesorDesignado._id}}" class="datosProfesor">
     <img id="imgProfesor" src="" alt="">
     <div>
-      <p>Nombre: {{profesorDesignado.nombre}}</p>
-      <p>Apellido: {{profesorDesignado.apellido}}</p>
-      <p>Correo: {{profesorDesignado.email}}</p>
-      <p>Teléfono: {{profesorDesignado.telefono}}</p>
+      <p>{{profesorDesignado.nombre}}</p>
+      <p>{{profesorDesignado.apellido}}</p>
+      <p>{{profesorDesignado.email}}</p>
+      <p>{{profesorDesignado.telefono}}</p>
     </div>
   </div>
 {{else}}
@@ -57,9 +57,7 @@
 {{#each usuario.rutinas}}
 
 {{!-- <li><p>Fecha: {{this.fecha}}</p> <a href="/api/views/createPDF/{{@index}}/{{../usuario._id}}" target="_blank"><span class="material-symbols-outlined"> --}}
-<li><p>Fecha: {{this.fecha}}</p> <a href="/api/views/verrutina/{{this.nombreArchivo}}/{{../usuario._id}}" target="_blank"><span class="material-symbols-outlined">
-picture_as_pdf
-</span> </a></li>
+<li><p>{{this.fecha}}</p> <a href="/api/views/verrutina/{{this.nombreArchivo}}/{{../usuario._id}}" target="_blank"><img src="https://static.vecteezy.com/system/resources/previews/010/852/914/non_2x/download-pdf-icon-png.png" alt="icono de pdf"></a></li>
 {{/each}}
 </ul>
 </section>
@@ -79,7 +77,7 @@ picture_as_pdf
 <h3>NO HAY GUIA DE 🥗🥙🥪🌮, ESTAMOS TRABAJANDO EN ELLO </h3>
 {{/if}}
 </section>
-<section class="dietas">
+<section id="progresos" class="dietas">
   <h2>PROGRESOS</h2>
   {{#if usuario.progresos.length}}
   <ul class="lista">
@@ -92,8 +90,20 @@ picture_as_pdf
 {{/each}}
 </ul>
 {{else}}
-<h3>NO HAS SUBIDO TUS PROGRESOS AUN </h3>
+<p>AUN NO HAS SUBIDO TUS PROGRESOS</p>
 {{/if}}
+<form id="formProgresos" action="">
+  <input id="fechaProgreso" type="date">
+  <div id="divInputs">
+    <label id="labelFrente" for="fotoFrente">Foto de frente</label>
+    <input type="file" name="fotoFrente" id="fotoFrente" >
+    <label id="labelPerfil" for="fotoPerfil">Foto de perfil</label>
+    <input type="file" name="fotoPerfil" id="fotoPerfil" >
+    <label id="labelEspalda" for="fotoEspalda">Foto de espalda</label>
+    <input type="file" name="fotoEspalda" id="fotoEspalda">
+  </div>
+  <button id="buttonProgresos" type="submit">Subir imagenes</button>
+</form>
 </section>
 <form  action="/api/session/logout" method="post"><button class="logout"type="submit">Cerrar
 cesión</button></form>

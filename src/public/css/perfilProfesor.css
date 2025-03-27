@@ -57,6 +57,10 @@ main {
   justify-content: space-around;
 }
 
+.datos1 p {
+  text-align: center;
+}
+
 .cargarFoto {
   background-color: rgb(56, 175, 56);
   border: none;
@@ -148,6 +152,7 @@ main {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   padding-top: 10px;
   gap: 10px;
 }
@@ -285,9 +290,24 @@ footer {
   background-color: black;
   color: white;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+footer p {
+  text-align: center;
+}
+
 /* Responsive */
+
+@media (max-width: 480px) {
+  .divAlumno {
+    width: 150px;
+    height: 150px;
+  }
+
+  .divAlumno p {
+    display: none;
+  }
+}

@@ -29,6 +29,10 @@ main {
   padding-bottom: 10px;
 }
 
+section h4 {
+  color: white;
+}
+
 .alumnoCuadro {
   color: white;
   background-color: rgba(0, 0, 0, 0.692);
