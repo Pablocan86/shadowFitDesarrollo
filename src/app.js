@@ -19,6 +19,7 @@ const fileUpload = require("express-fileupload");
 const { uploadFile, getFiles, getFileURL } = require("./config/s3.js");
 const puppeteer = require("puppeteer");
 
+app.locals.baseUrl = process.env.BASE_URL || "";
 //PDF
 const { crearPDF } = require("./midlewars/descargarPDF.js");
 
