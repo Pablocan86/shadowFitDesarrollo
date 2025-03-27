@@ -80,7 +80,7 @@ app.use(passport.session());
 app.use(express.json());
 //Permite leer datos de formularios
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "../public"));
 
 app.engine("handlebars", handlebars.engine());
 app.set("views", __dirname + "/views");
