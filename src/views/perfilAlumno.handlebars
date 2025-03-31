@@ -80,27 +80,35 @@ picture_as_pdf
 <section id="progresos" class="dietas">
   <h2>PROGRESOS</h2>
   {{#if usuario.progresos.length}}
-  <ul class="lista">
+  <div id="listaProgresos">
   {{#each usuario.progresos}}
-
+<h4 class="fechaDeProgresos">{{this.fecha}}</h4>
+<div class="FotosProgresos">
+  <img name="{{this.fotoFrente}}"   src="" alt="">
+  <img name="{{this.fotoPerfil}}" src="" alt="">
+  <img name="{{this.fotoEspalda}}" src="" alt="">
+</div>
 {{!-- <li><p>Fecha: {{this.fecha}}</p> <a href="/api/views/createPDF/{{@index}}/{{../usuario._id}}" target="_blank"><span class="material-symbols-outlined">
 <li><p>Fecha: {{this.fecha}}</p> <a href="/api/views/verrutina/{{this.nombreArchivo}}/{{../usuario._id}}" target="_blank"><span class="material-symbols-outlined">
 picture_as_pdf
 </span> </a></li> --}}
 {{/each}}
-</ul>
+</div>
 {{else}}
 <p>AUN NO HAS SUBIDO TUS PROGRESOS</p>
 {{/if}}
-<form id="formProgresos" action="">
+<form id="formProgresos" action="" enctype="multipart/form-data">
   <input id="fechaProgreso" type="date">
   <div id="divInputs">
     <label id="labelFrente" for="fotoFrente">Foto de frente</label>
     <input type="file" name="fotoFrente" id="fotoFrente" >
+    <input type="hidden" name="fotoFrente" value="progreso_frente">
     <label id="labelPerfil" for="fotoPerfil">Foto de perfil</label>
     <input type="file" name="fotoPerfil" id="fotoPerfil" >
+    <input type="hidden" name="fotoPerfil" value="progreso_perfil">
     <label id="labelEspalda" for="fotoEspalda">Foto de espalda</label>
     <input type="file" name="fotoEspalda" id="fotoEspalda">
+    <input type="hidden" name="fotoEspalda" value="progreso_espalda">
   </div>
   <button id="buttonProgresos" type="submit">Subir imagenes</button>
 </form>

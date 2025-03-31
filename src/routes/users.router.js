@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const userController = require("../controllers/userController.js");
 const { isAuthenticated, isNotAuthenticated } = require("../midlewars/auth.js");
-const upload = require("../midlewars/multer.js");
+const { upload, upload2 } = require("../midlewars/multer.js");
 const router = Router();
 
 router.get("/", userController.traeUsuarios);
@@ -20,7 +20,7 @@ router.get("/panelalumno/:uid", isAuthenticated, userController.panelAlumnos);
 
 // router.post("/login", userController.loguin);
 
-router.put("/:uid", userController.actualizarUsuario);
+// router.put("/:uid", userController.actualizarUsuario);
 
 router.put("/cargarprofesor/:uid/:pid", userController.cargarProfesor);
 
@@ -49,6 +49,18 @@ router.get(
 );
 
 router.put("/cambiarcontrasena/:uid", userController.cambiarContrasena);
+
+router.put(
+  "/subirprogresos/:uid",
+  upload2.fields([
+    { name: "fotoFrente", maxCount: 1 },
+    { name: "fotoPerfil", maxCount: 1 },
+    { name: "fotoEspalda", maxCount: 1 },
+  ]),
+  userController.subirProgresos
+);
+
+router.get("/fotoprogreso/:uid/:foto/", userController.traerFotoProgreso);
 
 // router.get("/upload", userController.upload);
 

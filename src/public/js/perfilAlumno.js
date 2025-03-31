@@ -103,12 +103,47 @@ fotoPerfil.addEventListener("change", (e) => {
 
 formProgresos.addEventListener("submit", async (e) => {
   e.preventDefault();
+  const fecha = new Date(fechaProgreso.value);
+  const fechaFormateada = fecha.toLocaleDateString("es-ES", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  });
   const formData = new FormData();
-  formData.append("fechaProgreso", fechaProgreso.value);
+  formData.append("fechaProgreso", fechaFormateada);
   formData.append("fotoFrente", fotoFrente.files[0]);
   formData.append("fotoPerfil", fotoPerfil.files[0]);
   formData.append("fotoEspalda", fotoEspalda.files[0]);
-  console.log(formData);
+
+  const response = await fetch(`/api/users/subirprogresos/${id}`, {
+    method: "PUT",
+    body: formData,
+  });
+  const data = await response.json();
+
+  if (response.ok) {
+    alert(data.message);
+    window.location.reload();
+  }
 });
 
-botonProgresos.addEventListener("click", (e) => {});
+document.querySelectorAll("#listaProgresos img").forEach((img, index) => {
+  const idUnico = Date.now() * 1000 + index;
+  img.id = `${idUnico}`;
+  const nombreArchivo = img.getAttribute("name");
+  if (nombreArchivo) {
+    fetch(`/api/users/fotoprogreso/${id}/${nombreArchivo}`)
+      .then((response) => response.json())
+      .then((data) => {
+        // La URL está en data.url
+        const imageUrl = data.url;
+
+        // Actualizar el atributo src de la imagen
+        const imgElement = document.getElementById(`${idUnico}`);
+        imgElement.src = imageUrl;
+      })
+      .catch((error) => {
+        console.error("Error al obtener la imagen de perfil:", error);
+      });
+  }
+});

@@ -335,3 +335,59 @@ exports.traerImagenPerfilProfesor = async (req, res) => {
     res.status(500).send(err.message);
   }
 };
+
+exports.subirProgresos = async (req, res) => {
+  let { uid } = req.params;
+  let { fechaProgreso } = req.body;
+  const archivos = req.files;
+
+  try {
+    const fotoFrenteKey = archivos.fotoFrente
+      ? archivos.fotoFrente[0].key
+      : null;
+    const fotoPerfilKey = archivos.fotoPerfil
+      ? archivos.fotoPerfil[0].key
+      : null;
+    const fotoEspaldaKey = archivos.fotoEspalda
+      ? archivos.fotoEspalda[0].key
+      : null;
+
+    const nuevoObjeto = {
+      fecha: fechaProgreso,
+      fotoFrente: fotoFrenteKey,
+      fotoPerfil: fotoPerfilKey,
+      fotoEspalda: fotoEspaldaKey,
+    };
+
+    await userService.cargarProgreso(uid, nuevoObjeto);
+    return res
+      .status(200)
+      .json({ success: true, message: "Progresos cargados correctamente" });
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+};
+
+exports.traerFotoProgreso = async (req, res) => {
+  let { uid, foto } = req.params;
+  try {
+    // Buscar al usuario por ID
+    const user = await userService.traeUnUsuario(uid);
+    // Verificar si el usuario existe
+    if (!user) {
+      return res.status(404).send("Usuario no encontrado.");
+    }
+
+    // Verificar si el usuario tiene una foto de perfil
+    if (user.progresos.length < 0) {
+      return res.status(404).send("No hay progresos.");
+    }
+
+    const fileName = foto;
+    const imagenURL = await getFileURL(fileName);
+
+    res.json({ url: imagenURL });
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+};

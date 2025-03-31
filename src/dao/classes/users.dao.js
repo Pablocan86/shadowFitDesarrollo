@@ -70,6 +70,12 @@ class UserManager {
     let result = await profesorModel.updateOne({ _id: uid }, valor);
     return result;
   }
+
+  async cargarProgreso(uid, progreso) {
+    let alumno = await userModel.findById(uid);
+    alumno.progresos.push(progreso);
+    await alumno.save();
+  }
 }
 
 module.exports = UserManager;

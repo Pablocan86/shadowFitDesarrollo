@@ -222,11 +222,42 @@ main {
   height: 80px;
 }
 
-#progresos {
+#listaProgresos {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#listaProgresos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#listaProgresos h4 {
+  background-color: rgb(116, 11, 11);
+  width: 99%;
+  text-align: center;
+  font-size: 1.2rem;
+}
+#listaProgresos div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+#listaProgresos div img {
+  width: 200px;
+  height: 200px;
+}
+.fechaProgresos {
+  width: 90%;
+  background-color: black;
 }
 #formProgresos {
   background-color: #33312f;
@@ -271,6 +302,22 @@ main {
   background-color: gray;
 }
 
+#buttonProgresos {
+  border-radius: 5px;
+  background-color: #1485ff;
+  border: none;
+  padding: 5px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: white;
+}
+
+#buttonProgresos:hover {
+  background-color: #007bff;
+}
+
 .logout {
   background-color: rgb(185, 9, 9);
   border: none;
@@ -313,5 +360,17 @@ footer {
 
   .lista li p {
     display: none;
+  }
+
+  #listaProgresos div {
+    flex-direction: column;
+  }
+  #formProgresos {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #formProgresos label {
+    text-align: center;
   }
 }

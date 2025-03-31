@@ -45,7 +45,9 @@ const userSchema = new mongoose.Schema({
     type: [
       {
         fecha: { type: String },
-        imagen: { type: String },
+        fotoFrente: { type: String },
+        fotoPerfil: { type: String },
+        fotoEspalda: { type: String },
       },
     ],
     default: [],

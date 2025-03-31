@@ -38,7 +38,29 @@ const upload = multer({
   },
 });
 
-module.exports = upload;
+const storage2 = multerS3({
+  s3: s3,
+  bucket: AWS_BUCKET_NAME, // Nombre de tu bucket en S3
+  key: function (req, file, cb) {
+    // Crear un nombre único para el archivo (puedes cambiar la lógica si deseas)
+
+    const customName = file.originalname;
+    const fileName = `${customName}_${Date.now()}.jpg`;
+    cb(null, fileName); // El archivo será subido con este nombre
+  },
+});
+
+const upload2 = multer({
+  storage: storage2,
+  fileFilter: function (req, file, cb) {
+    if (!file.mimetype.startsWith("image/")) {
+      return cb(new Error("Solo se permiten archivos de imagen."));
+    }
+    cb(null, true); // Aceptar el archivo
+  },
+});
+
+module.exports = { upload, upload2 };
 
 // const multer = require("multer");
 
