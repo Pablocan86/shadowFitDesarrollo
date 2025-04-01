@@ -19,10 +19,10 @@
       />
       {{/if}}
       <div id="usuario_id" data-id="{{alumno._id}}">
-        <p >Nombre: {{alumno.nombre}}</p>
-        <p>Apellido: {{alumno.apellido}}</p>
-        <p>Correo: {{alumno.email}}</p>
-        <p>Fecha de comienzo: {{alumno.fecha_registro}}</p>
+        <p >{{alumno.nombre}}</p>
+        <p>{{alumno.apellido}}</p>
+        <p>{{alumno.email}}</p>
+        <p>Inicio {{alumno.fecha_registro}}</p>
       </div>
     </div>
   </div>
@@ -34,7 +34,7 @@
   {{#each alumno.rutinas}}
  
     <li>
-      <p>Fecha: {{this.fecha}}</p>
+      <p>{{this.fecha}}</p>
       <a href="/api/views/rutinaProfesor/{{@index}}/{{../alumno._id}}" target="_blank">
         <span  class="material-symbols-outlined">multimodal_hand_eye</span>
       </a>
@@ -53,7 +53,18 @@
   <section>
     <h2>PROGRESOS</h2>
     {{#if alumno.progresos.length}}
-    <h4>hay progresos</h4>
+     <div id="listaProgresos">
+  {{#each alumno.progresos}}
+<article class="grupoProgreso">
+<h4 class="fechaDeProgresos">{{this.fecha}}</h4>
+<div class="FotosProgresos">
+  <img name="{{this.fotoFrente}}"   src="" alt="">
+  <img name="{{this.fotoPerfil}}" src="" alt="">
+  <img name="{{this.fotoEspalda}}" src="" alt="">
+</div>
+</article>
+{{/each}}
+</div>
     {{else}}
     <h4>Aun no se han cargado progresos</h4>
     {{/if}}
