@@ -251,6 +251,12 @@ main {
   justify-content: space-evenly;
   gap: 10px;
 }
+
+.FotosProgresos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 #listaProgresos div img {
   width: 200px;
   height: 200px;
@@ -341,7 +347,7 @@ footer {
   align-items: center;
 }
 
-@media (max-width: 418px) {
+@media (min-width: 320px) and (max-width: 520px) {
   .datos1 {
     gap: 10px;
   }
