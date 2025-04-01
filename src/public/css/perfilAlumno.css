@@ -243,21 +243,27 @@ main {
   text-align: center;
   font-size: 1.2rem;
 }
-#listaProgresos div {
+/* #listaProgresos div {
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   gap: 10px;
-}
+} */
 
 .FotosProgresos {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
 }
-#listaProgresos div img {
+.imgProgreso {
   width: 200px;
   height: 200px;
 }
@@ -347,7 +353,7 @@ footer {
   align-items: center;
 }
 
-@media (min-width: 320px) and (max-width: 520px) {
+@media (max-width: 520px) and (min-width: 320px) {
   .datos1 {
     gap: 10px;
   }
@@ -368,8 +374,9 @@ footer {
     display: none;
   }
 
-  #listaProgresos div {
-    flex-direction: column;
+  .FotosProgresos img {
+    width: 100px;
+    height: 100px;
   }
   #formProgresos {
     flex-direction: column;
@@ -378,5 +385,14 @@ footer {
 
   #formProgresos label {
     text-align: center;
+  }
+
+  .FotosProgresos {
+    gap: 10px;
+  }
+
+  .imgProgreso {
+    width: 50px;
+    height: 50px;
   }
 }

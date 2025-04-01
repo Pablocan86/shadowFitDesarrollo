@@ -101,13 +101,17 @@ main section h2 {
   backdrop-filter: blur(10px);
 }
 
-.material-symbols-outlined {
-  color: white;
-  font-size: 3rem;
+.listaRutinas li p {
+  text-align: center;
+}
+
+.view {
+  width: 50px;
+  height: 50px;
   transition: all 1s;
 }
 
-.material-symbols-outlined:hover {
+.view:hover {
   scale: 1.2;
 }
 #listaProgresos {
@@ -126,6 +130,7 @@ main section h2 {
   justify-content: space-around;
   flex-wrap: wrap;
   width: 99%;
+  height: 100%;
   border-radius: 5px;
   background-color: #33312f91;
   backdrop-filter: blur(10px);
@@ -188,6 +193,9 @@ footer {
 }
 
 @media (max-width: 520px) and (min-width: 310px) {
+  #usuario_id p {
+    text-align: center;
+  }
   .listaRutinas li {
     width: 100px;
     height: 100px;
@@ -196,7 +204,9 @@ footer {
     margin-left: 5px;
     margin-right: 5px;
   }
-  .FotosProgresos {
-    flex-direction: column;
+  .FotosProgresos img {
+    width: 90px;
+    height: 90px;
+    flex-wrap: wrap;
   }
 }

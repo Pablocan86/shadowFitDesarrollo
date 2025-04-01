@@ -57,7 +57,7 @@
 {{#each usuario.rutinas}}
 
 {{!-- <li><p>Fecha: {{this.fecha}}</p> <a href="/api/views/createPDF/{{@index}}/{{../usuario._id}}" target="_blank"><span class="material-symbols-outlined"> --}}
-<li><p>{{this.fecha}}</p> <a href="/api/views/verrutina/{{this.nombreArchivo}}/{{../usuario._id}}" target="_blank"><img src="https://firebasestorage.googleapis.com/v0/b/pfcantarin-reactjs.appspot.com/o/rutina_pdf.jpg?alt=media&token=51f47013-9cb7-4469-88cf-b0bdf7b9d0bc" alt="icono de pdf"></a></li>
+<li><p>{{this.fecha}}</p> <a href="/api/views/verrutina/{{this.nombreArchivo}}/{{../usuario._id}}" target="_blank"><img src="https://firebasestorage.googleapis.com/v0/b/pfcantarin-reactjs.appspot.com/o/rutina_pdf-removebg-preview.png?alt=media&token=aceebe66-0213-4c47-90a0-d42e4e1bfc22" alt="icono de pdf"></a></li>
 {{/each}}
 </ul>
 </section>
@@ -84,9 +84,9 @@ picture_as_pdf
   {{#each usuario.progresos}}
 <h4 class="fechaDeProgresos">{{this.fecha}}</h4>
 <div class="FotosProgresos">
-  <img name="{{this.fotoFrente}}"   src="" alt="">
-  <img name="{{this.fotoPerfil}}" src="" alt="">
-  <img name="{{this.fotoEspalda}}" src="" alt="">
+  <img class="imgProgreso" name="{{this.fotoFrente}}"   src="" alt="">
+  <img class="imgProgreso" name="{{this.fotoPerfil}}" src="" alt="">
+  <img class="imgProgreso" name="{{this.fotoEspalda}}" src="" alt="">
 </div>
 {{!-- <li><p>Fecha: {{this.fecha}}</p> <a href="/api/views/createPDF/{{@index}}/{{../usuario._id}}" target="_blank"><span class="material-symbols-outlined">
 <li><p>Fecha: {{this.fecha}}</p> <a href="/api/views/verrutina/{{this.nombreArchivo}}/{{../usuario._id}}" target="_blank"><span class="material-symbols-outlined">
