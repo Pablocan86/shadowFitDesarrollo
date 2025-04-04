@@ -53,6 +53,8 @@ const userSchema = new mongoose.Schema({
     default: [],
   },
   rol: { type: String, default: "alumno" },
+  code: { type: String, required: true },
+  status: { type: String, required: true, default: "UNIVERIFIED" },
 });
 
 const userModel = mongoose.model(userCollection, userSchema);

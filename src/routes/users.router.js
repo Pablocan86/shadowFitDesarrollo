@@ -6,6 +6,8 @@ const router = Router();
 
 router.get("/", userController.traeUsuarios);
 
+router.get("/confirm/:token", userController.confirm);
+
 router.get("/perfil/:uid", isAuthenticated, userController.perfilAlumno);
 
 router.get(

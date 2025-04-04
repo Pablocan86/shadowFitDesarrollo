@@ -2,10 +2,52 @@ const UserManager = require("../dao/classes/users.dao.js");
 const { createHash, isValidPassword } = require("../utils.js");
 const { Buffer } = require("buffer");
 const userService = new UserManager();
-const { transport } = require("../config/mailConfig.js");
+const { transport } = require("../config/mail.config.js");
 const { getFiles, uploadFile, getFileURL } = require("../config/s3.js");
 const { crearPDF } = require("../midlewars/descargarPDF.js");
+const { getTokenData } = require("../config/jwt.config.js");
 
+exports.confirm = async (req, res) => {
+  try {
+    //Obtener token
+    const { token } = req.params;
+    //Verificar la data
+    const data = await getTokenData(token);
+
+    const { email, code } = data.data;
+
+    if (data === null) {
+      return res.json({
+        succes: false,
+        msg: "Error al recibir data",
+      });
+    }
+
+    //Buscar si existe usuario
+    const user = await userService.traeUnUsuarioEmail(email);
+    //Verificar el código
+    if (code !== user.code) {
+      res.render("register", {
+        style: "registro.css",
+        title: "Registro Alumnos",
+        message: "Error en la verificación",
+      });
+    }
+    // Actualizar usuario y redireccionar a confirmación
+    await userService.actualizaPropiedad(user._id, { status: "VERIFICATED" });
+    return res.render("register", {
+      style: "registro.css",
+      title: "Registro Alumnos",
+      message: "Correo verificado correctamente",
+    });
+  } catch (error) {
+    console.log(error);
+    return res.json({
+      succes: false,
+      msg: "Error al confirmar",
+    });
+  }
+};
 exports.traeUsuarios = async (req, res) => {
   try {
     let usuarios = await userService.traeUsuarios();
@@ -138,6 +180,7 @@ exports.rutina = async (req, res) => {
 
 exports.cargarProfesor = async (req, res) => {
   let { uid, pid } = req.params;
+  const baseUrl = `${req.protocol}://${req.headers.host}`;
 
   try {
     let alumno = await userService.traeUnUsuario(uid);
@@ -152,15 +195,20 @@ exports.cargarProfesor = async (req, res) => {
     }
     await userService.cargarAlumnos(pid, uid);
     let result = await userService.actualizaPropiedad(uid, { profesor: pid });
+
     await transport.sendMail({
       from: "Shadow Fit <shadowfit.info@gmail.com",
       to: profesor.email,
       subject: `${profesor.nombre} tienes trabajo 💪`,
       html: `
-      <img style="width:100px;" src="https://lh3.googleusercontent.com/fife/ALs6j_En-sagYX45iih9TLATxrOg0LIjlS3Jp6uMYTJtq2l5AbR29usbTMOVqTUb_X6pz_C9cxW1WU99MPvqQJwKYzt-m5TwFD_neto0EekM8bf-9RZ91Q6jiBuMSgh9-B8i9vh9_vSd4RcXoC5QiVG54KOz9Vp9wenzp1pV-UU5AB3pLQ-T7cgjT9lGQevpdqtrLWaneHZgbQKTwrwyk8SqYYlwJUCAjcOlAG7Ee0QKn6HmS0pZNHrY4LITZsQmDr7fQA24cnWClgljBNfeCrYrtYkXrDykO2o67X4pgbDx7s54WYL1LtEPML940AiYyqtSESrMHfCsB_2YX-DtWCNZnx0SJdIfaakuYmcah-FFVS6jDtqEDBhVPmTblPvEFsD7oy10_F84QMN-CJw-EJv3bGuAtx3nWXj04JjncyTcqcLefWfywm7PUKfbtVJqIedQ9jxOmc23FjB1e_xwyDmVyaARIp3a5YHSIHd8X9IUdrV5h_Ocp_hklROnAEBtd4JR4idZGJsIQ3poFNHYwqc0iifUPFd5gRq4sxLKUFOaP-KhZOaDCexW3L2eyeU_DR0EQQfjad3F2PGIrW3vBFUwbXda5j-4tcrwGDAfuy6HZ0dTYMJJ2ibT9AhZkIlt12QrlZjLGdh6nqmJTtBsW7Xxa_sgFoqxryjrZrjZVqYwd-yO9sBHKMHPqgsmbZzkYEtkF43lCbMiNjlprtFjppP2yJbdCam3eaNqDXHeC9Z49tk7C4Vch3B43YPztsSFd2H8xeKbbgkz-qEQdv8UWPw9c7B50TMRc6hhFOtscVU3IFViEyC_c-_MyBXpSFb4nOoSuZXJK6vWYKMZsO7YOtuaqAJkrJt_c1Sr_hevyFUJF3pq8PlduxE8_-CNJ4yLj9lnYPZn7MKcAp6Yta5Bb7V_x6Wcci14P9A9v8LSSwiOK9Ki6OkKG8s5-8_tAI_EIYjymrgsMsXwyVU-Gzj3mY7nPDKhlXwbgWupL6kyrNV0IjH0rKpjdCRBnc8pCRrO9jNh4SBNB_nrqsd74jYtxfVknEFu6_IaeVpRIOyoJkgv4LKQJePp2b9b8hsGc3iaeiO4az7KxmcSZ_Bh-tQPYUzuN8df1EB9bP5vCYabPwkgKGz5odEAL9ac1goaqaripVbiBpWXmehAxm2ptt8ATUCYne8Ox1y6hPpZEB56WvOzglrbWdMR0NY7UO1JWOTF521UXub5X0WtStn5XG7AUGHzBGZp8g-ypZyusYhq7rA-PpXHwDby4g0MfWduOpmUhx2muIx9r0aS4JYjSGFDGKPna3SJmuaYuHuL0BzPiEZqmIcNC5bl7DNCQDyDnecKp1RZ8wN5iMkkWuWkvGBvwKykw7-M7JdtLLNvM8G_4RrysUzut8R4A4WWCRi0lXuZ6izUbytmEmC9HDWk7JEsP1d9smf8ZJ6dgU-A3KYqX9KM6vkeA9iRBQyudhxwWZJPOqkC48NBk3g37nAEyl1SN1JYCy03PKmCRa_eWhoMDGEuOcsbhdI8LvMPK3wh2BCQDaB-YdAerB64tg-VmWnXQdBAb9ji8WOMTIfGpSRs7cON_-y174UYeRUSIrVYoI9nvyVh6IHAXvXEEqm1kTwrtJc=w1920-h889" alt="">
+      <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f2f2f2;">
+      <div style="max-width: 600px; margin: auto; background-color: #fff; padding: 30px; border-radius: 8px; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+      <img style="width:100px;" src="https://firebasestorage.googleapis.com/v0/b/pfcantarin-reactjs.appspot.com/o/Artboard%201-8.png?alt=media&token=0e71c0ac-b657-45fe-95dd-394dea2eed3e" alt="">
       <h2>Hola ${profesor.nombre}</h2>
       <p>Tienes un alumno nuevo: ${alumno.apellido} ${alumno.nombre}</p>
-      <a href="http://192.168.0.250:8080/api/users/panelalumno/${alumno._id}">Ingresá y conocelo</a>`,
+      <a style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #9222ff; color: white; text-decoration: none; border-radius: 5px;" href="${baseUrl}/api/users/panelalumno/${alumno._id}">Ingresá y conocelo</a>
+      </div>
+      </div>`,
     });
     return res.status(200).json({ message: "Profesor agregado correctamente" });
   } catch (error) {
@@ -176,6 +224,7 @@ exports.cargarRutina = async (req, res) => {
   //   await uploadFile(result, nombreArchivo);
   //   res.send({ message: "subida exitos" });
   // });
+  const baseUrl = `${req.protocol}://${req.headers.host}`;
   let { uid } = req.params;
   let { rutina } = req.body;
   try {
@@ -188,15 +237,20 @@ exports.cargarRutina = async (req, res) => {
     const result = await crearPDF(rutina.vistaAlumno);
     await uploadFile(result, rutina.nombreArchivo, "application/pdf");
     await userService.cargarRutina(uid, rutina);
+    const urlFile = await getFileURL(rutina.nombreArchivo);
 
     await transport.sendMail({
       from: "Shadow Fit <shadowfit.info@gmail.com",
       to: alumno.email,
-      subject: "Usted tiene una nueva rutina disponible",
-      html: `<img style="width:100px;" src="https://lh3.googleusercontent.com/fife/ALs6j_En-sagYX45iih9TLATxrOg0LIjlS3Jp6uMYTJtq2l5AbR29usbTMOVqTUb_X6pz_C9cxW1WU99MPvqQJwKYzt-m5TwFD_neto0EekM8bf-9RZ91Q6jiBuMSgh9-B8i9vh9_vSd4RcXoC5QiVG54KOz9Vp9wenzp1pV-UU5AB3pLQ-T7cgjT9lGQevpdqtrLWaneHZgbQKTwrwyk8SqYYlwJUCAjcOlAG7Ee0QKn6HmS0pZNHrY4LITZsQmDr7fQA24cnWClgljBNfeCrYrtYkXrDykO2o67X4pgbDx7s54WYL1LtEPML940AiYyqtSESrMHfCsB_2YX-DtWCNZnx0SJdIfaakuYmcah-FFVS6jDtqEDBhVPmTblPvEFsD7oy10_F84QMN-CJw-EJv3bGuAtx3nWXj04JjncyTcqcLefWfywm7PUKfbtVJqIedQ9jxOmc23FjB1e_xwyDmVyaARIp3a5YHSIHd8X9IUdrV5h_Ocp_hklROnAEBtd4JR4idZGJsIQ3poFNHYwqc0iifUPFd5gRq4sxLKUFOaP-KhZOaDCexW3L2eyeU_DR0EQQfjad3F2PGIrW3vBFUwbXda5j-4tcrwGDAfuy6HZ0dTYMJJ2ibT9AhZkIlt12QrlZjLGdh6nqmJTtBsW7Xxa_sgFoqxryjrZrjZVqYwd-yO9sBHKMHPqgsmbZzkYEtkF43lCbMiNjlprtFjppP2yJbdCam3eaNqDXHeC9Z49tk7C4Vch3B43YPztsSFd2H8xeKbbgkz-qEQdv8UWPw9c7B50TMRc6hhFOtscVU3IFViEyC_c-_MyBXpSFb4nOoSuZXJK6vWYKMZsO7YOtuaqAJkrJt_c1Sr_hevyFUJF3pq8PlduxE8_-CNJ4yLj9lnYPZn7MKcAp6Yta5Bb7V_x6Wcci14P9A9v8LSSwiOK9Ki6OkKG8s5-8_tAI_EIYjymrgsMsXwyVU-Gzj3mY7nPDKhlXwbgWupL6kyrNV0IjH0rKpjdCRBnc8pCRrO9jNh4SBNB_nrqsd74jYtxfVknEFu6_IaeVpRIOyoJkgv4LKQJePp2b9b8hsGc3iaeiO4az7KxmcSZ_Bh-tQPYUzuN8df1EB9bP5vCYabPwkgKGz5odEAL9ac1goaqaripVbiBpWXmehAxm2ptt8ATUCYne8Ox1y6hPpZEB56WvOzglrbWdMR0NY7UO1JWOTF521UXub5X0WtStn5XG7AUGHzBGZp8g-ypZyusYhq7rA-PpXHwDby4g0MfWduOpmUhx2muIx9r0aS4JYjSGFDGKPna3SJmuaYuHuL0BzPiEZqmIcNC5bl7DNCQDyDnecKp1RZ8wN5iMkkWuWkvGBvwKykw7-M7JdtLLNvM8G_4RrysUzut8R4A4WWCRi0lXuZ6izUbytmEmC9HDWk7JEsP1d9smf8ZJ6dgU-A3KYqX9KM6vkeA9iRBQyudhxwWZJPOqkC48NBk3g37nAEyl1SN1JYCy03PKmCRa_eWhoMDGEuOcsbhdI8LvMPK3wh2BCQDaB-YdAerB64tg-VmWnXQdBAb9ji8WOMTIfGpSRs7cON_-y174UYeRUSIrVYoI9nvyVh6IHAXvXEEqm1kTwrtJc=w1920-h889" alt="">
-      // <h2>Hola ${alumno.nombre}</h2>
-      //<p>Tu profesor ${profesor.nombre} te acaba de hacer una rutina</p>
-      //<a href="http://api/users/perfil/${alumno._id}">Mirala desde aquí</a>`,
+      subject: `${alumno.nombre} tenés una nueva rutina nueva`,
+      html: `<div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f2f2f2;">
+      <div style="max-width: 600px; margin: auto; background-color: #fff; padding: 30px; border-radius: 8px; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+      <img style="width:100px;" src="https://firebasestorage.googleapis.com/v0/b/pfcantarin-reactjs.appspot.com/o/Artboard%201-8.png?alt=media&token=0e71c0ac-b657-45fe-95dd-394dea2eed3e" alt="">
+      <h2>Hola ${alumno.nombre}</h2>
+      <p>Tiene una rutina nueva de tu profesor ${profesor.nombre}</p>
+      <a style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #9222ff; color: white; text-decoration: none; border-radius: 5px;" href="${baseUrl}/api/users/perfil/${alumno._id}">Ingresá y mirala</a>
+      </div>
+      </div>`,
     });
 
     return res

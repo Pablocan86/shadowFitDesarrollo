@@ -12,21 +12,50 @@ const botonProgresos = document.querySelector("#buttonProgresos");
 const fechaProgreso = document.querySelector("#fechaProgreso");
 
 const id = uid.getAttribute("data-id");
-const idProfesor = uidProfesor.getAttribute("data-id");
+if (uidProfesor) {
+  const idProfesor = uidProfesor.getAttribute("data-id");
+  fetch(`/api/users/ver-foto-perfil-profesor/${idProfesor}`)
+    .then((response) => response.json())
+    .then((data) => {
+      // La URL está en data.url
+      const imageUrl = data.url;
 
-fetch(`/api/users/ver-foto-perfil-alumno/${id}`)
-  .then((response) => response.json())
-  .then((data) => {
-    // La URL está en data.url
-    const imageUrl = data.url;
+      // Actualizar el atributo src de la imagen
+      const imgElement = document.getElementById("imgProfesor");
+      imgElement.src = imageUrl;
+    })
+    .catch((error) => {
+      console.error("Error al obtener la imagen de perfil:", error);
+    });
 
-    // Actualizar el atributo src de la imagen
-    const imgElement = document.getElementById("imagenDePerfil");
-    imgElement.src = imageUrl;
-  })
-  .catch((error) => {
-    console.error("Error al obtener la imagen de perfil:", error);
-  });
+  if (archivo) {
+    archivo.addEventListener("change", function (e) {
+      const fileInput = e.target;
+      if (fileInput.files.length > 0) {
+        labelFoto.textContent = "Cambiar foto";
+      } else {
+        labelFoto.textContent = "Elegir foto";
+      }
+    });
+  }
+}
+
+const imgElement = document.getElementById("imagenDePerfil");
+if (imgElement) {
+  fetch(`/api/users/ver-foto-perfil-alumno/${id}`)
+    .then((response) => response.json())
+    .then((data) => {
+      // La URL está en data.url
+      const imageUrl = data.url;
+
+      // Actualizar el atributo src de la imagen
+
+      imgElement.src = imageUrl;
+    })
+    .catch((error) => {
+      console.error("Error al obtener la imagen de perfil:", error);
+    });
+}
 
 if (selectProfesor) {
   selectProfesor.addEventListener("click", async (e) => {
@@ -47,30 +76,6 @@ if (selectProfesor) {
     }
   });
 }
-
-if (archivo) {
-  archivo.addEventListener("change", function (e) {
-    const fileInput = e.target;
-    if (fileInput.files.length > 0) {
-      labelFoto.textContent = "Cambiar foto";
-    } else {
-      labelFoto.textContent = "Elegir foto";
-    }
-  });
-}
-fetch(`/api/users/ver-foto-perfil-profesor/${idProfesor}`)
-  .then((response) => response.json())
-  .then((data) => {
-    // La URL está en data.url
-    const imageUrl = data.url;
-
-    // Actualizar el atributo src de la imagen
-    const imgElement = document.getElementById("imgProfesor");
-    imgElement.src = imageUrl;
-  })
-  .catch((error) => {
-    console.error("Error al obtener la imagen de perfil:", error);
-  });
 
 if (archivo) {
   archivo.addEventListener("change", function (e) {

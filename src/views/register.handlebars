@@ -1,8 +1,8 @@
 <header><h1>REGISTRO ALUMNOS</h1></header>
 <main>
   {{#if message}}
-  <h3>{{message}}</h3>
-  <a class="logueo" href="/api/views/login">Loguearme</a>
+  <div id="verificarCorreoDiv"><h3>{{message}}</h3>
+  </div>
   {{else}}
   <form action="../../api/session/register" method="POST">
     <h4>REGISTRO</h4>

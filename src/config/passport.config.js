@@ -2,6 +2,8 @@ const passport = require("passport");
 const local = require("passport-local");
 const UserManager = require("../dao/classes/users.dao.js");
 const { createHash, isValidPassword } = require("../utils.js");
+const { v4: uuidv4 } = require("uuid");
+const { getToken, getTokenData } = require("./jwt.config.js");
 
 const userService = new UserManager();
 
@@ -24,7 +26,23 @@ const initializePassport = () => {
           if (user) {
             return done(null, false, { message: "El usuario ya existe" });
           }
-          let fechaActual = new Date();
+
+          //Generar código
+
+          const code = uuidv4();
+
+          // Formateo fecha actual
+          let fechaActual = new Date().toLocaleDateString("es-ES", {
+            day: "2-digit",
+            month: "long",
+            year: "numeric",
+          });
+
+          // const fechaFormateada = fechaActual.toLocalDateString("es-Es", {
+          //   day: "2-digit",
+          //   month: "long",
+          //   year: "numeric",
+          // });
 
           const nuevoUsuario = {
             nombre,
@@ -34,10 +52,14 @@ const initializePassport = () => {
             password: createHash(password),
             cumpleanos,
             foto_perfil: null,
+            code: code,
             fecha_registro: fechaActual,
           };
 
           let result = await userService.crearUsuario(nuevoUsuario);
+
+          //Obtener un template
+
           return done(null, result);
         } catch (error) {
           return done(error, false, { message: "Error en el registro" });
